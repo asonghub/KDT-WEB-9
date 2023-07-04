@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img 
+    src="../image/동글이사랑해.jfif" 
+    alt="동글이 사진" 
+    title="동글이 사사사진"
+    width="100"
+    height="100"/>
+    <!-- src는 필수 속성이지만, 
+        alt는 권장. 이미지가 없을때 어떤 이미지인지 설명해줌
+        title은 이미지를 호버했을때 이미지 설명 띄워줌 
+        width, height는 이미지 사이즈 지정. 기본이 px-->
+    <img src="./dog.jfif" alt="동글이 사진" />
+    <!-- 파일경로 지정 규칙 -->
+    <!-- 상대 경로 : 현위치 기준으로  -->
+    <div>
+        ./ : 현재의 위치를 의미
+        <br />
+        ../ :현재 위치의 이전 폴더
+        <img src="../html/동그란고양이.jpg" width="100"
+        height="100">
+        <br />
+        ../../ : 전전 폴더
+        <img src="../../KDT-WEB-9/html/동글이사랑해.jfif">
+
+
+    </div>
+    <!-- 절대 경로 : 컴퓨터 경로를 처음부터 끝까지 작성
+        폴더 주소 클릭하면 복사할수 있음
+        C:\Users\user\Desktop\github\KDT-WEB-9\html\동글이사랑해.jfif-->
+    <br />
+
+    <a href="https://www.naver.com" target="_blank">네이버</a>
+    <!-- 새로운 탭으로 연결 -->
+    <a href="https://www.naver.com" target="_self">네이버</a>
+    <!-- 현재 탭에서 연결 -->
+    <br />
+    <a href="0704cafe.html" target="_blank">내가 만든 카페 메뉴판</a>
+    </body>
+</html>
