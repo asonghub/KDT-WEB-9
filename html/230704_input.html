@@ -28,20 +28,51 @@
     <h2>checkbox type</h2>
     <input type="checkbox" name="hobby" value="야구"/> 야구
     <input type="checkbox" name="hobby" value="soccer"/> 축구
-    <input type="checkbox" name="hobby" value="볼링"/> 볼링
+    <input type="checkbox" name="hobby" value="볼링" checked/> 볼링
     <!-- value 값을 지정해야 back에서 어떤 값인지 알수 있음  -->
+    <!-- checked는 미리 체크해두는 기능  -->
 
     <h2>radio type</h2>
     <input type="radio" name="gender" value="남자"/>남자
-    <input type="radio" name="gender" value="여자"/>여자
+    <input type="radio" name="gender" value="여자" checked/>여자
     <!-- 중복체크가 불가능한 타입 radio/ name이 같은것 기준으로 하나만 체크 -->
 
     <h2>radio2 type</h2>
     <input type="radio" name="favorite" value="야구"/>야구
-    <input type="radio" name="favorite" value="축구"/>축구
+    <input type="radio" name="favorite" value="축구" id="soccer"/>
+    <label for="soccer">축구</label>
     <input type="radio" name="favorite" value="볼링" id="bowling"/>
     <label for="bowling">볼링</label>
+    <!-- label tag는 input tag속에 id로 지정해서 이름을 클릭해도 체크박스 표시되도록 -->
 
+
+    <h2>date type</h2>
+    <input type="date" name="birth" />
+    <input type="datetime-local" name="birth-time" />
+    <!-- 해당지역의 시간 기준 (?) -->
+
+    <h2>select tag</h2>
+    <select name="select-name">
+        <optgroup label="옵션1~2">
+            <option value="option1">옵션1</option>
+            <option value="option2" selected>옵션2</option>
+        </optgroup>
+        <optgroup label="옵션3~5">
+            <option value="option1">옵션3</option>
+            <option value="option2" >옵션4</option>
+            <option value="option3" disabled>옵션5</option>
+        </optgroup>
+    </select>
+        <!-- name은 select tag에 들어가고 value는 option tag에 -->
+        <!-- 미리 체크하고 싶은건 selected -->
+        <!-- optgroup은 옵션을 그룹화 -->
+        <!-- disabled는 선택할 수 없게 하는 옵션 -->
+
+    <div>
+        <input type="text" name="email" value="aaa@naver.com" disabled/>
+        <input type="text" name="email" value="aaa@naver.com" readonly/>
+
+    </div>
 
 
 </body>
