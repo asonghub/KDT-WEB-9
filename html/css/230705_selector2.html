@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 가상선택자 : */
+        /*hover는 마우스 커서를 올렸을때 */
+        a:hover {
+            color: red;
+        }
+        /* 클릭하고 있을때 */
+        a:active {
+            color: blue;
+
+        }
+
+
+
+        /* 버튼 스타일링 */
+        button{
+            color:yellow;
+        }
+        /* 앞에는 어떤 선택자든 상관없음 .aaa등  */
+        button:hover {
+            background-color:blueviolet;
+            color:white
+        }
+
+        button:active{
+            background-color: yellow;
+            color: black;
+        }
+        /* 인풋태그가 포커스되었을때 */
+        input:focus {
+            background-color: orange;
+        }
+/* .name_input도 같음. css는 -을 쓰는편 */
+        div > .name-input:focus{
+            background-color: brown;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com/" target="_blank">네이버</a>
+    <button type="button">제출</button>
+
+    이름: <input type="text" name="name" placeholder="이름을 입력하세용"/>
+    <div>
+        <input class="name-input" type="text" name="name" placeholder="이름이름" />
+    </div>
+
+</body>
+</html>

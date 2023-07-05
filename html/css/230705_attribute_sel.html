@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 속성값을 변수화 */
+        /* :root는 <html>이나 다름없는 가장 상위 태그 */
+        /* css에서 변수는 --로 시작해야함 */
+        :root {
+            --main-color : blue;
+            --main-bg-color : white;
+            --sub-color : rgb(161, 133, 81);
+            --main-font-big:30px;
+
+        }
+
+        div {
+            color: var(--main-color);
+            font-weight: 900;
+            font-size: var(--main-font-big);
+        }
+
+        p {
+            background-color: var(--main-color);
+        }
+
+
+        /* input의 자식중 이런 속성을 가진 애들 선택 */
+        input [속성이름=속성값] {}
+
+        [속성이름] {}
+
+        [type=text]{
+            background-color: green;
+        }
+
+        [disabled]{
+            color: white;
+        }
+
+        *:not(disabled){
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>안녕</div>
+    <p>안녕안녕</p>
+
+    <input type="text" value="HEROPY" />
+    <input type="password" value="1234" />
+    <input type="text" value="ABCD" disabled />
+</body>
+</html>

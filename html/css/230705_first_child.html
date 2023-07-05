@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fruits span:first-child{
+            color: red;
+        }
+
+        /* 작동안함 첫째가 div가 아니라서! */
+        .fruits div:first-child{
+            color:orange;
+        }
+
+        .fruits h3:last-child{
+            color: green;
+        }
+/* 짝수번째인데 span인거 */
+        .fruits span:nth-child(2n){
+            background-color: green;
+            color:white
+        }
+        .fruits *:nth-child(2n+1){
+            background-color: green;
+            color:white
+        }
+/* 2부터~ */
+        .fruits *:nth-child(n+2){
+            background-color: green;
+            color:white
+        }
+
+        .fruits div:nth-child(2){
+            background-color: green;
+        }
+
+        .fruits *:not(span){
+            /* .orange가 될수도 잇고~ 위의 경우는 span이 아닌것 */
+        }
+
+        .fruits span:not(.orange){
+            /* .orange가 될수도 잇고~ 위의 경우는 span이 아닌것 */
+        }
+/* 가상요소 선택자 ,이모지는 win+. */
+        .example::after{
+            content:"🙄"
+
+        }
+        div.example::before{
+            content:"😁"
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="example">
+        ::before에 해당하는 내용
+        바로가기
+        ::after에 해당하는 내용
+    </div>
+    <div class="fruits">
+        <span>딸기</span>
+        <span>수박</span>
+        <div>오렌지</div>
+        <p>망고</p>
+        <h3>사과</h3>
+    </div>
+
+</body>
+</html>

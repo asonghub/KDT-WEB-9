@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span태그이면서 orange 클래스를 가진 애를 선택 */
+        span.orange{
+            color:red;
+        }
+        /* orange와 apple 클래스를 가진애 선택 */
+        .orange.apple{
+
+        }
+        /* div의 자식이면서 p태그 */
+        div > p {
+            color:navy;
+        }
+        /* 자식의 자식 */
+        div > ul > .orange{
+            color: orange;
+        }
+        /* 선택자들 사이에 띄어쓰기는 하위, >는 자식, 이어붙이면 일치 */
+        div .orange{
+            background-color: red;
+        }
+
+        /* 형제선택자. 바로다음형제선택은 + */
+        ul + div{
+            color: blueviolet;
+        }
+
+        /* ul + p은 ul다음 p태그가 없으니까 무효함 */
+
+        /* apple 클래서 다음의 li 태그 모두 선택 */
+        .apple ~li{
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="apple">사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <!-- 아래 태그만 선택하고싶을때 -->
+        <!-- span태그가 뭐지? -->
+        <span class="orange">오렌지</span>
+    </div>
+</body>
+</html>
