@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./230705_html.css">
+    
+    <style>
+        /* css의 주석은 이런모양 */
+        /* 모든 div태그에 컬러를 적용하겠다! */
+        /* css의 속성은 color, background-color이런것들 */
+        div{
+            color:blue;
+            background-color: grey;
+            width: 100px;
+            height: 100px;
+        }
+/* .이 적히면 태그를 의미하지 않음. class를 의미함 */
+        .main {
+            font-size: 30px;
+        }
+        
+        .aaa{
+            font-weight: 900;
+            /* 100,200,300,...,900중 선택 */
+            /* 900으로 갈수록 두꺼워짐 */
+        }
+    </style>
+<!-- 스타일 태그는 헤드에 있어야 빠르게 로딩될수 있음. 뒤에있으면 다시 바꿔야하니까 -->
+</head>
+<body>
+    <div style="color:green; margin:20px">안녕세요</div>
+    <!-- 인라인>style(내장)=link(나중에 적힌게 우선순위) -->
+    <div class="main aaa">
+        안녕하세요
+    </div>
+    <div>
+        안녕하세요
+    </div>
+    <p>
+        안녕
+    </p>
+</body>
+</html>
