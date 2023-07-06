@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-box{
+            height: 500px;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            /* 자식요소를 inline-block으로 만듬. 하위말고! */
+            justify-content: center;
+            /* flex일때 사용 가능, (flex-direction이 row일때)가로 가운데 정렬 */
+            align-items: center;
+            /* flex일때 사용 가능, (flex-direction이 row일때)세로 가운데 정렬 */
+
+        }
+        .child-box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-box">
+        <div class="child-box">
+
+        </div>
+        <div class="child-box">
+            
+        </div>
+        <div class="child-box">
+            
+        </div>
+
+    </div>
+</body>
+</html>
