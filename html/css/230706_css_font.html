@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+        @font-face {
+            font-family: 'TTWanjudaedunsancheB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+            /* 만약 url링크가 바뀐다면 폰트가 깨짐. 외부라이브러리를 불러올땐 기본폰트를 하나 더 적어주자 */
+            font-weight: 700;
+            font-style: normal;
+        }
+        /* root는 html태그를 지정한것 */
+        :root{
+            font-size: 20px;
+            /* font size는 하위요소도 다 적용됨 */
+        }
+        main {
+            font-size: 30px;
+            text-align: right;
+        }
+                .font-px {
+            font-size: 20px;
+            /* px단위는 해상도에 따라 달라짐. 윈도우 디스플레이 해상도를 조절하면 달라짐 1234...1080까지 적히는게 1080해상도 */
+            font-family: 'Noto Sans KR', sans-serif;
+            /* noto sans kr이 불러와지기 전에는 sans-serif로 사용된다로 해석가능 */
+            /* root에 넣으면 모든 글꼴이 바뀜 */
+        }
+        .font-em {
+            font-size: 1.5em;
+            /* 상위요소(가장 가까운 부모요소의 폰트사이즈)의 배수 여기서는 16x1.5라서 32px */
+            font-family: sans-serif;
+            font-weight: 700;
+
+            /* 불러오지 않은 굵기는 표시되지 않음 비슷한 굵기로 대체됨 */
+        }
+        .font-rem {
+            font-size: 1.5rem;
+            line-height: 30px;
+            /* 가장상위요소의 폰트사이즈 1.5배 */
+            /* 가장상위요소20 x 1.5 x 2=60 :line-height*/
+            font-family: 'TTWanjudaedunsancheB','sans-serif';
+            /* 100,700 이런식으로 제공하는 굵기를 써놓으면 좋음 */
+        }
+        .font-per {
+            font-size: 100%;
+            /* 보통 percent 사이즈는 부모기준 퍼센트 */
+            color:  rgba(189, 96, 96, 0.478);
+            text-align: center;
+            text-decoration: underline;
+            /* text-decoration: line-through; */
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        /* span의 기본값 */
+        span{
+            display: inline;
+        }
+        /* div의 기본값 */
+        div{
+            display: block;
+        }
+        /* 크기만큼의 width를 갖게하고싶을때 */
+        .inline-block{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="font-px">안녕하세요?</div>
+        <div class="font-em">안녕하세요em?</div>
+        <div class="font-rem">안녕하세요rem?</div>
+        <div class="font-per">안녕하세요per?</div>
+    </main>
+    <a href="#">에이태그</a>
+
+    <div>
+        <span></span>
+    </div>
+
+    <div style="background-color: red;">aaa</div>
+
+    <span style="background-color: blue; width: 100px;">bb</span>
+    <!-- 인라인요소는 width를 설정할 수 없음 -->
+
+    <div style="display: inline-block; background-color: yellow; width: 200px;">inline으로바꾼div</div>
+</body>
+</html>
