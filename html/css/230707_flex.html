@@ -9,6 +9,7 @@
             display: flex;
             /* flex를 사용하면 자식요소(하위x)를 인라인블럭으로 만듦 */
             
+            
             /* flex-direction: column-reverse; */
             /* row:가로, column:세로 
             row-reverse: 시작점이 오른쪽이 되고 순서도 반대로
@@ -16,10 +17,33 @@
             
             flex-wrap: wrap;
             /* nowrap이 기본임.가로크기에 맞춰 줄어드는디  콘텐츠가wrap은 넘어가게 */
-        
+            
+            /* flex-direction기준으로*/
+            justify-content: space-evenly;
+            /* 수평(가로) 컨텐츠 정렬방법
+            flex-end: 오른쪽으로 붙임
+            center: 가운데정렬
+            space-between: 간격 떨어뜨리기 
+            space-around: 컨텐츠의 좌우 마진 동일하게
+            space-evenly: 마진 모두 동일하게*/
+
+            align-items: flex-end;
+            /*수직정렬(가로의 위아래를 어떻게 정렬할것인가)
+            flex-start: 세로기준으로 위에 붙음 
+            flex-end: 세로 기준으로 아래에
+            center: 한 줄의 가운데에 */
+            height: 600px;
+
+            /* aling-content: flex-start */
+            /* 행의 구분 없앰. 뭉친 애들을 어떻게  움직일것인가(위아래)
+            flex-start:위에붙임
+            flex-end: 아래에 붙임
+            center: 가운데 */
+
             }
 
-        .container>div{
+        .container > div,
+        .container-1 > div{
             width: 100px;
             height: 100px;
 
@@ -40,6 +64,8 @@
         <div class="red"></div>
         <div class="orange"></div>
         <div class="yellow"></div>
+    </div>
+    <div class="container-1">
         <div class="red"></div>
         <div class="orange"></div>
         <div class="yellow"></div>
