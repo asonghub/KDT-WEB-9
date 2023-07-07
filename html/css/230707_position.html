@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            
+        }
+
+        .relative{
+            position: relative;
+        }
+
+        .r-1{
+            background-color: red;
+            left:50px;
+            /* top: 50px; */
+            /* bottom: ;
+            right: ; */
+
+        }
+        .r-2{
+            background-color: blue;
+            bottom: -50px;
+            /* 양수는 위로, 음수는 아래로 */
+
+
+        }
+        .r-3{
+            background-color: yellow;
+            right: -10px;
+            /* 오른쪽기준으로 왼쪽으로 10px이동 */
+
+        }
+        .parents{
+            position: relative;
+            width: auto;
+            height: 200px;
+            /* absolute는 relative가 있는 상위요소를 기준으로 함 
+            위에도 없으면 html 가장상단 기준으로 위치를 잡게됨 */
+        }
+
+        .absolute{
+            position: absolute;
+            background-color: orange;
+            /* 포지션이 지정되지 않으면 이동하지 않음 */
+            right:10%;
+            bottom: 10%;
+            /* left/right중 하나, top/bottom중 하나를 씀 */
+            /* absolute는 부모기준이라 div 기준이라 오른쪽 끝 기준으로 오른쪽 끝에서 왼쪽으로 이동! */
+        }
+        .absolute.a-1{
+            position: absolute;
+            background-color: green;
+            right: 5%;
+            top: 20px;
+        }
+
+        .fixed{
+            position: fixed;
+            /* 스크롤을 내려도 제일 위에 고정됨 nav바에 사용 */
+            background-color: violet;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- 헤더의 크기만큼 마진탑을 줘서 가리지 않게 한다! -->
+
+    </main>
+    <footer></footer>
+    <div class="relative r-1"></div>
+    <div class="relative r-2"></div>
+    <div class="relative r-3"></div>
+
+    <div class="parents">
+        <div class="absolute"></div>
+        <div class="absolute a-1"></div>
+        <!-- 나중에 있는게 위에 보임 -->
+
+    </div>
+
+    <div class="fixed">
+
+    </div>
+</body>
+</html>
