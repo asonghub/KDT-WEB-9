@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            /* flex를 사용하면 자식요소(하위x)를 인라인블럭으로 만듦 */
+            
+            /* flex-direction: column-reverse; */
+            /* row:가로, column:세로 
+            row-reverse: 시작점이 오른쪽이 되고 순서도 반대로
+            column-reverse: 시작점이 아래가 되고 순서도 반대*/
+            
+            flex-wrap: wrap;
+            /* nowrap이 기본임.가로크기에 맞춰 줄어드는디  콘텐츠가wrap은 넘어가게 */
+        
+            }
+
+        .container>div{
+            width: 100px;
+            height: 100px;
+
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+    </div>        
+</body>
+</html>
