@@ -38,20 +38,94 @@
       - 해당 header 작업할 때 display: none 코드를 지워서 작업하면 됩니다!
   */
   /* header1 */
-  .header1 {
+
+  .header1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header1 ul{
+    display: flex;
+  }
+  .header1 li{
+    margin: 5px;
   }
   
+  /* .header1 {
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+
+  }
+  .header1 span{
+    position: absolute;
+    left:0;
+    margin-left: 10px;
+    
+    
+  }
+  .header1 .menus{
+    position: absolute;
+    /* display: flex; */
+    /* right: 0;
+    display: flex;  
+     
+  }
+  .header1 ul li{
+    margin-right: 10px;
+    
+  } */ 
+  
   /* header2 */
-  .header2 {
-    display: none;
+  .header2{
+    /* position: relative; */
+    display: flex;
+    
+  }
+  .header2 ul{
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
   }
   
   /* header3 */
   .header3 {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header3 ul{
+    display: flex;
+    
+  }
+  .header3 ul li{
+    margin: 5px;
+
   }
   
   /* header4 */
   .header4 {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header4 .menu-left{
+    display: flex;
+  }
+  .header4 .menu-left span{
+    margin: 5px;
+  }
+  .header4 .menu-left ul{
+    display: flex;
+    
+  }
+  .header4 li{
+    margin: 5px;
+  }
+  .header4 .menu-right{
+    display: flex;
   }
