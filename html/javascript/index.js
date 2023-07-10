@@ -86,4 +86,5 @@ let black= rainbow.indexOf('black');
 console.log(black)
 
 rainbow.reverse();
-console.log(rainbow)
+console.log(rainbow);
+

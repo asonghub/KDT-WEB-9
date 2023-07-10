@@ -5,14 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 링크방식 -->
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script> -->
 
     <!-- 내장방식 -->
-    <!-- <script>
-        alert("hello")
+    <script>
+        // alert("hello")
         // alert를 눌러야 다음 줄을 읽음. 내용을 확인할때 버그를 확인할때 콘솔과 사용
-        console.log("helloworld")
-    </script> -->
+        // console.log("helloworld")
+
+        //array 배열데이터
+        let animals=['dog','cat','lion'];
+        //object 객체의 특성을 지정해놓을때 사용 중괄호로 지정!
+        let cat = {
+            age: 5,
+            name: '냥이',
+            mew: function(){
+                console.log('야옹');
+            }
+        }
+
+        console.log(cat)
+        console.log(cat.age)
+        cat.mew()
+
+        let dog = {
+            name:'초코',
+
+        }
+
+        console.log(dog.age)//object자료형에서 없는 값에 접근하면 undifined로 뜸
+        
+        
+        let me ={
+            name: '마아송',
+            mbti: 'isfp',
+            home: '관악구',
+            pet: null
+            }
+        console.log(me.name)
+        console.log(me.mbti)
+        console.log(me.home)
+        console.log('pet:',me.pet)
+
+        console.log(typeof cat.age)
+        console.log(typeof cat.name)
+        console.log(typeof cat.mew)//함수는 function자료형.함수 실행이 아니니까 ()빼도됨
+        console.log(typeof dog.age)//undifined는 그대로 나옴
+        console.log(typeof me.pet)//null은 object 자료형
+
+    //     let score1 = prompt('첫번째 성적을 입력하세요');
+    //     let score2 = prompt('두번째 성적을 입력하세요');
+        
+    //     console.log(score1, score2)
+
+    //     let avg = (Number(score1) + Number(score2))/2;
+    //     //prompt는 문자열로 저장이 됨. 그래서 원하는 값이 나오지 않음. js는 타입 지정이 불분명
+    //    //Number(값): 문자열을 숫자열로 바뀌는 변환!
+    //    //String(값): 문자열로 변화시킴
+    //     console.log(avg)
+        
+        console.log(String(null))
+
+        // let num=5;
+        // console.log(null.toString(), 5)
+
+
+        console.log(typeof(1),"isn't" ,typeof("cat"),"data type.")
+        console.log(`Typeof 를 boolean이나 null에 사용하면 ${typeof(false)}결과를 얻을 수 있습니다`)
+
+        
+        let mathScore = "77"
+        let engScore = "88"
+        
+        console.log(`수학: ${mathScore},영어:${engScore}`)
+        let avgScore = (Number(mathScore)+Number(engScore))/2
+        console.log('평균:',avgScore)
+
+        let num = 1;
+        num = 5;
+        let numString = "5"
+
+        console.log(num>5)
+        // == , !=, < . <= , > , >= 
+        // === , !== (type까지 비교)
+
+        console.log(num !== numString) //==하면 true, ===하면 false
+
+        console.log(num + 5)
+        console.log(num - 5)
+        console.log(num * 5)
+        console.log(num / 5)
+        console.log(num % 2)//num/2했을때의 나머지, 짝수홀수 
+
+        console.log(num%5 == 0)
+
+        console.log(num**2)//제곱
+
+        num = num +5;
+        console.log(num)
+        num += 5;
+        console.log(num)
+        num *= 5;
+        console.log(num)
+
+        num = num +1;
+        //num += 1;
+        //num++;
+        //++num;
+        //console.log(num++)
+
+        //논리연산자
+        // == , !=, < . <= , > , >= ,=== , !==
+
+        console.log(true || true)
+        // && =>and 연산: 앞뒤가 모두 참일때 true 반환
+        // || =>or 연산: 앞뒤가 하나라도 참일경우 true 반환
+        // 
+        console.log(!true)
+        console.log(num==76 && num>=76 )
+        console.log(!(num==1))
+    </script> 
 </head>
 <body>
     
