@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            animation: movetoright 2s linear infinite alternate;
+            /* 이름 지속시간, 반복횟수 필수입력 */
+        }
+        @keyframes movetoright {
+            /* 처음시작 */
+            from{
+                left:0px;
+                /* 분모에 position속성이 없으니까 뷰포트 기준이됨 */
+            }
+            /* 나중엔 이렇게 바뀜 */
+            to{
+                left:80vw;
+            }
+
+            /* 직접 시작과 중간, 끝을 지정할 수 있음
+            0%{
+                left: 0px;
+            }
+            50%{
+                left: 100px;
+            }
+            100%{
+                left: 0px;
+            } */
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
