@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = prompt('숫자1');
+        // let num1 = Number(a)
+        // let b = prompt('숫자2');
+        // let num2 = Number(b)
+       
+        function add(){
+            let num1 = Number(prompt('숫자1'));
+            let num2 = Number(prompt('숫자2'));
+            return alert(num1 + num2)
+        }
+        function sub(){
+            let num1 = Number(prompt('숫자1'));
+            let num2 = Number(prompt('숫자2'));
+            return alert(num1 - num2)
+        }
+        function divide(){
+            let num1 = Number(prompt('숫자1'));
+            let num2 = Number(prompt('숫자2'));
+            return alert(num1 / num2)
+        }
+        function mul(){
+            let num1 = Number(prompt('숫자1'));
+            let num2 = Number(prompt('숫자2'));
+            return alert(num1 * num2)
+        }
+    </script>
+
+    <button onclick="add()" style="cursor:pointer;">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="mul()">곱하기</button>
+    <button onclick="divide()">나누기</button>
+</body>
+</html>
