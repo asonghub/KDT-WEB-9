@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(let i=0; i<10; i++){
+        //     for(let j=0; j<10; j++){
+
+        //     }
+        // }
+
+        //let fruits = ['apple','banana','orange','grape']
+        // for(let i=0; i<fruits.length; i++) {
+        //     console.log(fruits[i])
+        // }
+
+        // while(조건){
+
+        // }
+
+        // let number = 5;
+        // let sum=0;
+        // for(let i=0 ; i <=number ;i++ ) {
+        //     sum += i //sum=sum+i
+        //     console.log(sum)
+        // }
+/*
+        for(let i=1; i<=5; i++){
+            for(let j=0; j<5; j++){
+                console.log(i,j)
+            }
+        }
+
+        for(let i =0; i<=10000;i++){
+            if(i%13==0){
+                if(i%2==1){
+                  console.log(i)  
+                }
+            }
+            else{}
+        }
+
+        let ran=Number(prompt('숫자를 입력하세요.'))
+        for(let i =0; i<=ran;i++){
+            if(i%13==0){
+                if(i%2==1){
+                  console.log(i)  
+                }
+            }
+            else{}
+        }
+    */
+    for(let i =10000; i%13==0 && i%2==1 ;i--){
+            console.log(i)
+        }
+        /*
+        for(let i=2; i<=9; i++){
+            for(let j=0; j<=9;j++){
+                if(j==0){
+                    console.log(`--${i}단--`)
+                }else{
+                    let num=i*j;
+                    console.log(`${i}*${j}=${num}`)
+                }
+            }
+        }
+        */
+       /*
+        for(let i=2; i<=9; i++){
+            console.log(`--${i}단--`)
+            for(let j=1; j<=9; j++)
+            console.log(`${i}*${j}=${i*j}`)
+        }
+        */
+
+        //while문은 선언을 먼저
+
+        // let index=0;
+        // while(index < fruits.length){
+        //     console.log(fruits[index]);
+        //     index++;
+        // }
+
+        //continue; 참이면 다음안하고 넘어감
+        //바나나 빼고 출력하는 코드
+        // for(let i=0; i<fruits.length; i++){
+        //     if(fruits[i]=="banana"){
+        //         continue
+        //     }
+        //     console.log(fruits[i])
+        // }
+
+
+        //사용자가 숫자를 입력하길 기대하면서, 
+        //1~숫자까지의 합을 구하는 코드
+        // 반복되는 횟수가 지정되지 않을때 while문 사용
+        // let num = NaN;
+        // while(isNaN(num)){
+        //     num= Number(prompt('숫자를 입력하세요'))
+        // }
+        //console.log(isNaN(num))
+
+        //적절한 순간에 깨야함 .+위처럼 하기도 하고 아래처럼하기도
+        // let number=5;
+        // while(true){
+        //     number= Number(prompt('숫자를 입력하세요'))
+        //     if(number > 10){
+        //         break;
+        //     }
+        // }
+
+
+        // let i =2;
+        // while(i<10) {
+        //     let j=1;
+        //     while(j<10){
+        //         console.log(`${i}*${j}=${i*j}`)
+        //         j++;
+        //         }
+        //     i++;
+        // }
+
+
+        //실습
+        // let n=0;
+        // let sum=0;
+        // while(n<100){
+        //     if(n%2==0 || n%3==0 ){
+        //         sum +=n;
+        //     }
+        //     n++    
+        // }
+        // console.log(sum)
+
+
+        //do while문. 일단 실행하고 조건을 나중에 확인
+        // let i=0;
+        // while(i<10){
+        //     console.log(i)
+        //     i++;
+        // }
+
+        // let j=0;
+        // do{
+        //     console.log(i)
+        //     j++;
+        // }
+        // while(j<10);
+
+
+        //배열
+        let fruits = ['apple','banana','orange','grape']
+        for(let i=0; i<fruits.length; i++) {
+            console.log(fruits[i])
+        }
+
+        //for (변수선언 of 배열){}
+        for(let fruit of fruits){ //오른쪽의 값을 하나하나 넣으면서도는것
+            console.log(fruit);
+        }
+    </script>
+</body>
+</html>
