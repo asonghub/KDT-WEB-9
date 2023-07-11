@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //조건문: 조건에 따라 다른 코드를 실행시키는 문법
+
+        // let isShow = false;
+        // if(isShow){
+        //     console.log("보여준다!");
+        // } 
+        
+        // if(isShow){
+        //     console.log("보여준다!");
+        // } else{
+        //     console.log("보여주지 않는다!");
+        // }
+
+        let number = Number(prompt('나이를 입력하세용'));
+        let sex = prompt('성별을 입력하세용')
+        if(sex =='men' || sex =='남'||sex =='남자')
+            if(number >= 20 ){
+            alert('성인 남자');
+                
+            }else if(number>=17){
+                alert('남고등학생');
+
+            } else if(number>=14){
+                alert('남중학생');
+            } else if(number>=9){
+                alert('남초등학생');
+            }else{
+                alert('남유아')
+            }
+        else {
+            if(number >= 20 ){
+            alert('성인 여자');
+                
+            }else if(number>=17){
+                alert('여고등학생');
+
+            } else if(number>=14){
+                alert('여중학생');
+            } else if(number>=9){
+                alert('여초등학생');
+            }else{
+                alert('여유아')
+            }
+        }
+        
+    </script>
+</body>
+</html>
