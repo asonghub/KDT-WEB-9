@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <script>
+        sayHello()//함수선언문은 호이스팅됨. 변수든 함수든 선언하는것들을 모아서 위로 빼놓는 기능이 호이스팅
+
+        //함수선언문
+        function sayHello() { 
+            console.log("hello");
+        }
+        //함수는 만들고 호출해야 실행됨
+        sayHello()
+
+        //sayHello2() 오류발생. 함수표현식은 호이스팅안됨.
+
+        //함수표현식
+        let sayHello2 = function(){//(익명함수) 밑에는 이름없는 함수를 변수에 담은것을 함수표현식이라함
+            console.log('Hello')
+        }
+        sayHello2()
+
+        //화살표함수
+        let sayHello3 = () => {
+            console.log('Hello')
+        }
+        sayHello3()
+    </script>
+
+    <script>
+        let number = 5;
+        //매개변수: 함수 외부에서 사용한 변수, 값 등을 
+        //함수 내부로 전달하고 싶을때 사용
+        //반환값이란? 함수 내부에서 생성된 변수, 값 등을
+        //함수 외부로 전달하고싶을 때 사용
+
+        //1. 매개변수가 없고, 반환값도 없음
+        function aaa(){
+            console.log("aaa")
+        }
+        aaa()
+
+        //2. 매개변수가 없고, 반환값이 있음
+        function bbb(){
+            return 'bbb' //retrun이 있으면 반환값이 있는것
+        }
+        bbb()//=> 'bbb'. 이 값을 어딘가에 저장한다던지 콘솔로 찍는다든지 해야 유의미
+        console.log(bbb())
+        let str=bbb()
+        console.log(`우와 str`)
+        console.log(`우앙 ${str}`)
+
+        //3. 매개변수 있고, 반환값이 없음
+        let number1 = 5;
+        let number2 = 3;
+        function ccc(num1, num2){
+            console.log(num1 + num2)
+        }
+        ccc(1,2)
+        ccc( number1, "hello" )
+
+        //4. 매개변수 있고, 반환값 있음
+        function ddd(num1){
+            return num1 + 5
+        }
+        console.log(ddd('아송'))
+
+        //함수 표현식으로 만들기
+        let sum = (num1, num2) => {
+            let num = num1 + num2;
+            let mul = num *5;
+            return mul;
+        }
+
+        let sumMul = sum(3,6)
+        console.log(sumMul)
+
+        let multifly = function(num1,num2){
+            return  num1 * num2;
+        }
+        console.log(multifly(3,7))
+        console.log(multifly(2,2))
+
+        let square = (num) => {
+            num1 = num**2
+            return console.log(num1)
+        }
+        square(4)
+        square(11)
+        square(5)
+
+    </script> -->
+    <script>
+        function sayHello(){
+            alert("안녕하세요?")
+        }
+
+
+    </script>
+
+    <button onclick="sayHello()">안녕?</button>
+    <div style="border: 1px solid #000; cursor:pointer;" onclick="sayHello()">안녕?</div>
+</body>
+
+</html>
