@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = "성춘향";
+        //간단한 조건문 switch
+        switch(name){
+            case "성춘향": //name과 같은지
+                console.log("여자")
+                break; //switch를 끝낸다
+            case "홍길동":
+                console.log("남자")
+                break;
+            default:
+                console.log("잘 모르겠습니다.")
+                break;
+        }
+
+        //3항연산자
+        //조건 ? "참일경우 실행할 코드" : "거짓일 경우 실행할 코드";
+
+        let age =18;
+        //(age >= 20 && age <100 ) ? console.log('성인') : console.log('미성년자')
+
+        let state = age >= 20 ? '성인' : '미성년자';
+        console.log(state)
+
+        //let state;
+        //age >= 20 ? state= '성인' : state ='미성년자';
+
+        let now = new Date().getHours();
+        console.log(now);
+        now >= 12 ? console.log('오후') : console.log('오전');
+    </script>
+</body>
+</html>
