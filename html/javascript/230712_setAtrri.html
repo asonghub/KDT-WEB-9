@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+
+        .green{
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="red" class="box red"></div>
+    <div id="orange" class="box orange"></div>
+    <div class="box yellow"></div>
+
+    <button type="button" onclick="createGreenBox()">생겨라</button>
+    <button type="button" onclick="removeBox()">사라져라</button>
+</div>
+
+    <script>
+        let container =document.querySelector(".container")
+        // console.log(container)
+        // console.log(container.children)//자식들의 배열 선택
+        console.log(container.children[container.children.length-1])
+
+        let redBox = document.getElementById('red')
+        console.log(redBox.parentNode) //상위가 아니라 부모는 하나니까 요소로 선택(배열x)
+
+        let orangeBox = document.getElementById('orange')
+        //redBox다음 형제 선택하려면?
+        console.log(redBox.nextElementSibling)//댜음 형제는 하나니까 요소선택
+        console.log(orangeBox.previousElementSibling)//이전형제
+
+
+        function createGreenBox(){
+            let createBox = document.createElement('div')
+            createBox.className = 'box green'
+            //document.write(createBox)//문자열만 사용할수있어서 안됨
+            
+            //container.append(createBox)//container의 마지막자식요소로 괄호안 요소를 추가
+            //매개변수로 문자열도 가능 노드도 가능
+           // container.appendChild(createBox)
+           //appendChild 매개변수로 노드객체만 추가가능. 노드=요소
+           // container.prepend(createBox)
+            orangeBox.after(createBox)
+
+        }
+        function removeBox(){
+            let orangeBox = document.getElementById('orange')
+            container.removeChild(orangeBox)
+
+}
+        
+    </script>
+
+</body>
+</html>
