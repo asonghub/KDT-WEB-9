@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="red" class="box red">
+        <span>빨간 </span>
+        <span>상자</span>
+        </div>
+    <div id="orange" class="box orange"></div>
+    <div class="box yellow"></div>
+
+    <button type="button" onclick="redToggle()">깜빡 깜빡</button>
+
+    
+    <!-- <input type="text" name="id" /> -->
+
+    <!-- 요소선택
+        <script>
+        let redBoxbyID = document.getElementById("red")//id는 무조건 하나라서 배열에 담기지 않음
+        console.log(redBoxbyID)
+
+        let boxes = document.getElementsByClassName("box")//class는 여러곳에 쓰일 수있어서 무조건 배열에 담음. 하나여도!
+        console.log(boxes)
+
+        let boxesByTag = document.getElementsByTagName("div")
+        console.log(boxesByTag)
+
+        let input = document.getElementsByName("id") //name으로 선택. 배열에 담김
+        console.log(input)
+
+        let boxesBySelector = document.querySelector(".box") //셀렉터 선택자. [id=name]도 가능
+        //하나만 선택함 . box는 여러개니까 이중 제일 위에것 읽음
+        console.log(boxesBySelector)
+        let boxesBySelectorAll = document.querySelectorAll(".orange") //배열에 담김, id를 선택해도 배열에 담김
+        console.log(boxesBySelectorAll)
+
+    
+    </script> -->
+
+
+    <script>
+        //document.write('안녕?') //요소제일 마지막에 쓰기
+
+        let redBox = document.getElementById('red');
+    //     redBox.innerText = '바꾼 글자' //요소도 다 바뀜
+    //     redBox.innerHTML = '<span>바꿔잉</span>' //태그도 먹힘
+    //     console.log(redBox.innerText) //요소의 text가 반환
+    //     console.log(redBox.innerHTML)
+    //     console.log(redBox.textContent)
+
+        // console.log(redBox.className) //클래스 네임 반환. 바꿀수잇음
+        // redBox.className =" yellow"
+
+        console.log(redBox.classList) //class를 배열로 보여줌
+
+        function redToggle(){
+            let redBox= document.getElementById("red")
+            if (redBox.classList.contains("red"))
+                redBox.classList.remove("red")
+            else{
+                redBox.classList.add("red")
+            }
+        }
+            //classList 속성은 conntains 함수 제공, 요소 하나에만 적용 배열로 적용안됨
+            //괄호 안에 들어온 값이 클래스에 존재하는지 검사
+            //true false return
+
+            //classlist 속성은 remove 함수 제공
+            //괄호 안에 들어온 값을 리스트 안에서 삭제
+
+            //classlist 속성은 add함수 제공
+            //괄호 안에 들어온 값을 리스트 안에 추가
+
+            //사실 위 내용을 포함하는 함수가 있음...
+            //redBox.classList.toggle("red")
+            //classlist 속성은 toggle 함수 제공
+            //괄호 안에 들어온 값을 리스트 안에 존재하는지 알아서 판단
+            //있다면 제거 없다면 추가
+
+            //setAttribute
+        //     let redBox = document.getElementById('red')
+
+        // redBox.setAttribute("class","box orange")
+        // //속성을 바꿔줌.클래스 box orange로
+
+    </script>
+</body>
+</html>
