@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //메소드는 함수와 비슷
+    let str = 'Happy day~!';
+    console.log(str.length); //문자열의 공백포함 길이 반환
+
+    console.log(str.toUpperCase()) //문자열 전체를 대문자로 반환 (바꾸는게 아님)
+    console.log(str.toLowerCase()) //문자열 전체를 소문자로 반환
+    //사용자의 입력을 받을때 대소문자가 섞여있음.이때 위 메소드를 사용해서 비교하고자 하는 문자와 비교
+
+    console.log(str.indexOf('e')) //매개변수 문자가 몇번째 인덱스인지, 없다면 -1반환
+
+    console.log(str.slice(2)) //앞 두개 데이터 빼고 반환
+    console.log(str.slice(2,5)) // 앞 두개 데이터 빼고 5번째 데이터 까지반환
+
+    console.log(str.replace('p','a'))//첫번째 p를 a로 변경
+    console.log(str.replaceAll('p','a'))//모든 p를 a로 변경
+
+    console.log(str.repeat(2)) // 문자열 n번 반복
+
+    console.log(str.trim()) //문자열 양끝 공백 없애기
+
+    //'이름/전화번호/주소' /를 기준으로 쪼개
+    //'2023-07-12'를 -를 기준으로 쪼개서 배열로 반환
+    console.log(str.split('a') ) //a는 없어지고 a를 기준으로 문자열이 쪼개져서 배열이 반환
+    
+    
+
+    //메소드 체이닝
+    let hello = 'Hello~';
+
+    let helloReverse = hello.split('').reverse().join('')
+    //split과 join에 빈문자열''을 적으면 문자열을 다 나누겟다/합치겟다는 뜻
+    //['H','e','l','l','o','~'] =>
+    //['~','o','l','l','e','H']
+    //~olleH
+    console.log(helloReverse)
+
+    console.log(hello.split('').reverse().join('/'))//합칠때/를 추가하겠다
+    //~/o/l/l/e/H
+
+    //연습
+    let prac = 'lunch dinner';
+    let carp = prac.split('').reverse().join('');
+    console.log(carp)
+
+
+    </script>
+</body>
+</html>
