@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div>값1:<input type="text" id="value1"/></div>
+<div>값2:<input type="text" id="value2"/></div>
+<div>연산자:<input type="text" id="op"/></div>
+<div>결과:
+    <input type="text" id="result"/>
+</div>
+<button type="button" onclick="calculate()">계산하기</button>
+<button type="button" onclick="remove()">초기화</button>
+    
+<script>
+    function calculate() {
+        let num1 = Number(document.getElementById('value1').value);
+        console.log(typeof(num1))
+        let num2 = Number(document.getElementById('value2').value);
+        let op = document.getElementById('op').value;
+        let result =0
+
+        //연산작업
+        switch(op){
+            case '+':
+                result =num1 +num2;
+                break;
+            case '-':
+                result = num1-num2;
+                break;
+            case '*':
+                result = num1*num2;
+                break;
+            case '/':
+                result = num1/num2;
+                break;  
+        }
+       //input에 값 넣는 코드
+        document.getElementById('result').value = result;
+    }
+    function remove(){
+        document.getElementById('value1').value="";
+        document.getElementById('value2').value="";
+        document.getElementById('op').value="";
+        document.getElementById('result').value="";
+    }
+
+    
+
+    
+
+
+</script>
+</body>
+</html>
