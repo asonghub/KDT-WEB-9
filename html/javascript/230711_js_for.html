@@ -154,14 +154,36 @@
 
         //배열
         let fruits = ['apple','banana','orange','grape']
-        for(let i=0; i<fruits.length; i++) {
-            console.log(fruits[i])
-        }
+        // for(let i=0; i<fruits.length; i++) {
+        //     console.log(fruits[i])
+        // }
 
-        //for (변수선언 of 배열){}
-        for(let fruit of fruits){ //오른쪽의 값을 하나하나 넣으면서도는것
-            console.log(fruit);
-        }
+        // //for (변수선언 of 배열){}
+        // for(let fruit of fruits){ //오른쪽의 값을 하나하나 넣으면서도는것
+        //     console.log(fruit);
+        // }
+
+        //.forEach는 함수의 매개변수로 함수를 받음. =>콜백함수(나중에)
+        // fruits.forEach(function(data, index, arr){
+        //     console.log("data:",data);
+        //     console.log("index:",index);
+        //     console.log("arr:",arr)
+        // })
+
+        // fruits.forEach((data,index,arr)=>{
+        //     console.log("data:",data);
+        //     console.log("index:",index);
+        //     console.log("arr:",arr)
+
+        // })
+
+        // let numbers =[1,2,3,4,5]
+        
+        // numbers.forEach((index,arr)=>{
+        //     console.log(index);
+        //     console.log(arr);
+        // })
+        //필요한 값만 써주면 되는데 arr를 쓰려면 data,index를 다 써야함
     </script>
 </body>
 </html>
