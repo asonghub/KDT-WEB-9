@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //만료일 = '2023-06-07'
+        //표준 객체는 초록색 글씨
+
+        let now = new Date()//2023-07-12(수) 기준
+        let expired = new Date('2023-06-07')//시간 지정하지 않으면 자동으로 9시
+        console.log(now, expired)
+        console.log(now.getFullYear()) //2023
+        console.log(now.getMonth()+1) //7 
+        //주의: .getMonth는 실제 월 -1로 나옴
+        console.log(now.getDate()) //12
+        console.log(now.getDay()) //3 요일을 숫자로 반환
+        console.log(now.getTime() >= expired.getTime()) //1970년 1월1일 0시부터 지금까지 밀리초만큼 지난 
+        //now가 expired보다 클 경우 만료된것(true)
+
+
+        let year =now.getFullYear();
+        let month = now.getMonth()+1;
+        let date = now.getDate();
+        console.log(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`)
+        console.log(`${year}-${month >=10 ? month : '0' +month}-${date >=10 ? date : '0' +date}`)
+    
+    
+        console.log(Math.PI)
+        console.log(Math.E)
+
+        console.log(Math.min(2,5,8)) //최소값 반환
+        console.log(Math.max(2,5,8)) //최대값 반환
+        console.log(Math.random())  //0~1 사이의 실수 반환
+
+        console.log(Math.round(7.5), Math.round(7.2)) //반올림
+        console.log(Math.floor(7.9), Math.floor(7.2)) //내림
+        console.log(Math.ceil(7.9), Math.ceil(7.2)) //올림
+
+        //정수 랜덤값을 만드는 방법
+       // console.log(Math.random()*(최댓값-최소값)+최소값)
+       console.log(Math.floor(Math.random()*(100-1)+1)) 
+
+
+       //연습
+       let now1 = new Date()
+       let tdate = now1.
+    </script>
+
+
+</body>
+</html>
