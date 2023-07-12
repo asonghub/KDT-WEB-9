@@ -84,11 +84,11 @@ section .city .city_img {
     opacity: 0;
   }
   25%{
-    transform: rotate(-180deg);
+    transform: rotate(180deg);
     opacity: 1;
   }
   50%{
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
     opacity: 0;
   }
   75%{
