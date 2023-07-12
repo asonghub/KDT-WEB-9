@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr =[]
+        for( let i=1 ; i <= 100; i++){
+            arr.push(i);
+        }
+
+        let sum = 0;
+        for(let i=0 ; i < arr.length ; i ++){
+            sum += Number(arr[i]);
+        }
+        console.log(sum)
+
+        let sumForOf = 0;
+        for(let sum2 of arr){
+            sumForOf += sum2
+        }
+        console.log(sumForOf)
+
+        let sumEach=0;
+        arr.forEach((data)=>{
+            sumEach += data;
+        })
+        console.log(sumEach)
+
+        //배열에서 for, for of, for each 를 사용하는 경우 i가 인덱싱 외에는 사용하는데가 없다면 for of 나 for each 사용하는게 좋고, 배열을 사용할땐(?) for each
+    </script>
+</body>
+</html>
