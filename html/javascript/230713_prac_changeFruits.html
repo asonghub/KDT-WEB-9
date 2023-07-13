@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <img src="../../image/apple.jpeg" style="width: auto; height: 400px;">
+    <br>
+    <button type="button" onclick="fruitStore('../../image/apple.jpeg')" >사과</button>
+    <button type="button" onclick="fruitStore('../../image/banana.jpg')" >바나나</button>
+    <button type="button" onclick="fruitStore('../../image/포도.jpeg')" >포도</button>
+    <button type="button" onclick="fruitStore('../../image/복숭아.jpeg')" >복숭아</button>
+
+    <script>
+        let imgLink = null
+        function fruitStore(imgLink){
+            $('img').attr("src",imgLink)
+            console.log(imgLink)
+        }
+       
+    </script>
+</body>
+</html>
