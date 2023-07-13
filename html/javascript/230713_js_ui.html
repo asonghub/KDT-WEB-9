@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .navy{
+            background-color: navy;
+        }
+        .purple{
+            background-color: purple;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box red" onclick="switchColor2()" style="cursor: pointer;"></div>
+    <!-- <button type="button" onclick="switchColor()">바껴라</button> -->
+
+    <script>
+        console.log($('.box').hasClass('red'))
+        function switchColor(){
+            if($('div').hasClass('red')){
+              $('.box').switchClass('red','orange',1000)  
+            }else if($('div').hasClass('orange')){
+                $('.box').switchClass('orange','yellow',1000)
+            }else if($('div').hasClass('yellow')){ 
+                $('.box').switchClass('yellow','green',1000)
+            }else if($('div').hasClass('green')){
+                $('.box').switchClass('green','blue',1000)
+            }else if($('div').hasClass('blue')){
+                $('.box').switchClass('blue','navy',1000)
+            }else if($('div').hasClass('navy')){
+              $('.box').switchClass('navy','purple',1000)  
+            }else if($('div').hasClass('purple')){
+                $('.box').switchClass('purple','red',1000)
+            }
+            
+        }
+
+        const colors=['red','orange','yellow','green','blue','navy','purple']
+        let num = 0;
+        function switchColor2(){
+            $('.box').switchClass(colors[num],colors[num+1])
+            num++;
+            if(num === colors.length-1) num=0;
+        }
+        
+    </script>
+</body>
+</html>
