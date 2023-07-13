@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div onclick=""></div> -->
+    <button type="button" onclick="">버튼</button>
+    <input type="text" name="id" placeholder="id를 입력해주세요"/>
+    <input type="text" name="pw" placeholder="pw를 입력해주세요"/>
+
+    <script>
+        // function aaa(){
+
+        // }
+       // let btn = document.createElement("button")
+
+        
+        let button=document.querySelector('button')
+
+        // button.addEventListener("click",function(){
+        //     alert('클릭!')
+        // })
+
+        button.addEventListener("click",function(){
+            alert('클릭!')
+        })
+
+        let input = document.querySelectorAll('input')
+        for(let i=0; i<input.length; i++){
+            input[i].addEventListener('focus',(e)=>{
+                e.currentTarget.style.backgroundColor='black';
+            })
+
+            input[i].addEventListener('blur',(e)=>{
+                e.currentTarget.style.backgroundColor='initial'})
+        }
+
+        /*
+        input.addEventListener('focus',(targett)=>{
+            //event, e, target
+            //이벤트의 매개변수는 이벤트에 대한 정보를 담고있음. 콜백함수?
+            //console.log(targett.currentTarget)
+            //console.log(targett)찍어보면 뭐있는지 나옴
+            input.style.backgroundColor='black'; //css에서는 background-color
+        })
+        input.addEventListener('blur',(targett)=>{
+            //event, e, target
+            //이벤트의 매개변수는 이벤트에 대한 정보를 담고있음. 콜백함수?
+            //console.log(targett.currentTarget)
+            //console.log(targett)찍어보면 뭐있는지 나옴
+            targett.currentTarget.style.backgroundColor='yellow'; //css에서는 background-color
+        })
+
+        //css로도 focus했을때 백그라운드 색 변경할수있음 (해보깅)
+        //css로 할수있는건 css로 하는게 조음 더 가벼워서.
+        */
+    </script>
+    
+</body>
+</html>
