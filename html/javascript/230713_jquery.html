@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            /* background-color: red; */
+            transition: all 1s;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <input type="text" name="id" id="id"/>
+    <button onclick="submitt()">바껴라!</button>
+    <button onclick="btn2()">사라져라!</button>
+
+    <div id="div1"></div>
+    <div></div>
+
+    <div class="container">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="red"></div>
+    </div>
+
+    <button onclick="fn3()">요소탐색</button>
+    <script>
+        function fn3(){
+            // console.log($('.container').children().removeClass('red'))
+
+            // console.log($('.orange').parent())
+            // console.log($('.orange').parents('body'))//parents도 선택자를 할수잇슴
+
+            // console.log($('.orange').next())
+            //console.log($('.orange').prev())
+
+            console.log($('.red').nextAll('.red'))
+            console.log($('.orange').prevAll())
+        }
+
+    //$('선택자').함수() //jquery내의 함수를 사용
+        function submitt(){
+            // let valueJQeury = $('#id').val()
+            // let valueJs = document.getElementById('id').value
+            // console.log(valueJQeury,valueJs)
+
+            //document.getElementById('id').value = 'aaa'; //js
+           // $('#id').val('aaa'); //jqeury
+
+            //$('input').val('aaa') //자동으로 모든 태그에 aaa를 넣음 js로 하려면 for문 돌려야함
+
+            //css변경
+            // $('div').css('background-color','blue')
+            // $('div').css('border-radius','20px')
+
+            //attr 함수
+            $('input').attr('placeholder','아이디를입력하세요')
+            
+            //text 함수 .innerText
+            // $('div').text('<p>Hi</p>')
+
+            //html함수 .innerHTML
+            // $('div').html('<p>Hi</p>')
+
+            //append 함수
+            // let h1 = document.createElement('h1')
+            // h1.innerText = '안녕'
+            // document.querySelector('div').append(h1)
+            $('div').append('<h1>안녕</h1>') //태그를 parshing함. 요소를 따로 추가할 필요없음
+            //appendChild없음
+
+            //prepend함수
+            $('div').prepend('<h1>자식</h1>')
+
+            //after함수
+            $('div').after('<h1>after</h1>')
+
+            //before함수
+            $('div').before('<h1>before</h1>')
+
+            //empty 함수
+            $('div').empty() //div태그 안의 내용을 지움
+
+            //remove 함수
+            // $('div').remove() //div태그를 지움
+
+            //addClass 함수
+            $('div').addClass('red')
+        }
+
+        function btn2(){
+            //removeClass 함수
+            // $('div').removeClass()
+            // $('div').removeClass('red')
+
+            //hasClass 함수
+            console.log( $('div').hasClass('red'))
+
+            //togglClass 함수
+            $('div').toggleClass('red')
+        }
+        
+        
+    </script>
+</body>
+</html>
