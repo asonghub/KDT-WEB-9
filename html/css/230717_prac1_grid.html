@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @font-face {
+        font-family: 'IAMAPLAYER';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+        body{
+            margin: 0px;
+        }
+        .container{
+            /* width:100vw; */
+            height: 100vh;
+            display: grid;
+            grid-template-columns:1fr 2fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+        .item{
+            /* width: 100px; */
+            /* justify-self: center; */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            font-family: 'IAMAPLAYER';
+            font-size: large;
+            display: grid;
+           
+        }
+
+        .item span{
+            place-self: center;
+            
+
+        }
+
+
+        .red{
+            grid-column: 1 / span 4;
+            background-color: #F94144;
+            
+        }
+        .orange{
+            grid-row: 2 / span 2;
+            background-color: #F3722c;
+        
+        }
+        .yellow{
+            grid-column: 2 / span 2;
+            background-color: #F9C74F;
+        }
+        .green{
+            grid-column: 4 / 5 ;
+            grid-row: 2 / 4;
+            background-color: #43AA8B;
+        }
+        .blue{
+            
+            background-color: #F8961E;
+        }
+        .navy{
+            background-color: #90BE6D;
+        }
+        .purple{
+            grid-column: 1 / 5;
+            background-color: #4444FF;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="item red"><span>#F94144</span></div>
+    <div class="item orange"><span>#F3722c</span></div>
+    <div class="item yellow"><span>#F9C74F</span></div>
+    <div class="item green"><span>#43AA8B</span></div>
+    <div class="item blue"><span>#F8961E</span></div>
+    <div class="item navy"><span>#90BE6D</span></div>
+    <div class="item purple"><span>#4444FF</span></div>
+
+</div>
+</body>
+</html>
