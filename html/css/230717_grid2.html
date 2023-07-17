@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        height: 500px;
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(3, 200px);
+        
+        grid-template-areas: 
+        'header header .'
+        'nav main aside'
+        'footer footer footer';
+    }
+        .item{
+            /* width: 100px;
+            height: 100px; */
+        }
+        .red{
+            grid-area: header;
+            background-color: red;
+            
+        }
+        .orange{
+            grid-area: nav;
+            background-color: orange;
+           
+        }
+        .yellow{
+            grid-area: main;
+            background-color: yellow;
+        }
+        .green{
+            grid-area: aside;
+            background-color: green;
+        }
+        .blue{
+            grid-area: footer;
+            background-color: blue;
+        }
+        .navy{
+            background-color: navy;
+        }
+        .purple{
+            background-color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 그리드도 컨테이너와 아이템 개념임  -->
+    <div class="container">
+        <div class="item red"></div>
+        <div class="item orange"></div>
+        <div class="item yellow"></div>
+        <div class="item green"></div>
+        <div class="item blue"></div>
+        <!-- <div class="item navy"></div>
+        <div class="item purple"></div> -->
+
+    </div>
+</body>
+</html>
