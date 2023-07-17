@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+
+        .rain{
+            background-color: aqua;
+        }
+        .sun{
+            background-color: red;
+        }
+        .moon{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="rain" class="cloud rain">
+        <span>비</span>
+        <span>비</span>
+    </div>
+    <div id="sun" class="cloud sun"></div>
+    <div class="cloud moon"></div>
+    <!-- <button type="button" onclick="rainToggle()">비가온다</button> -->
+
+    <script>
+        let rainId = document.getElementById("rain")
+        console.log(rainId)
+        let sunByClass = document.getElementsByClassName("sun")
+        console.log(sunByClass)
+        let divTag = document.getElementsByTagName("div")
+        console.log(divTag)
+
+        document.write('비오냐?')
+        sunByClass[0].innerText='이건 sun'//class로 선택한 배열이니까 인덱스 추가해야함
+        sunByClass[0].innerHTML='<div>ㅇㅇ</div>'
+        sunByClass[0].textContent='hi'//요소에 문자열'hi추가'??
+
+        rainId.className ='sun'//원래거에서 다 없어지고 sun으로만 바뀜
+
+
+    </script>
+</body>
+</html>
