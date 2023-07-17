@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        body{
+            background-color: indianred;
+            color: white;
+        }
+        .box{
+            font-size: 100px;
+        }
+        /* @media 유형 and (크기조건){ 그다음 css문법} */
+        /* 유형 : screen, print, all  */
+        /* 크기 조건 : max, min-width / max, min-height  */
+        /* max-width : 오른쪽 숫자값 '이하'일 때 */
+        /* min-width : 오른쪽 숫자값 '이상'일 때 */
+
+        /* max,min하나만 골라서 기준으로 해서 큰거부터 작으거 순으로 */
+        @media screen and (max-width: 700px){ 
+            /* device        700px이하(쪼개고 싶은 break point) */
+            body{
+                /* 바뀌는 것만 적으면 됨. 안바뀌는건 안적어도 됨 */
+                background-color: green;
+                font-family: serif;
+                
+            }   
+        }
+        @media screen and (max-width: 500px){ 
+            body{
+                background-color: yellow;
+                font-family: serif;
+                
+            }   
+        }
+        @media screen and (max-width: 300px){ 
+            body{
+                background-color: black;
+                font-family: serif;
+                
+            }   
+        }
+
+        @media print {
+            .box{
+                display: none;
+            }
+            
+        }
+    </style> -->
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        /* min-width는 작은거부터 써야함! 모바일은 minwidth가 편할수도..!*/
+        /* @media screen and (min-width : 300px){
+            body{
+                background-color: yellow;
+            }    
+        }
+        @media screen and (min-width : 500px){
+            body{
+                background-color: green;
+            }    
+        }
+        @media screen and (min-width : 700px){
+            body{
+                background-color: white;
+            }    
+        } */
+
+        @media screen and (orientation: landscape){
+
+        }
+        
+        @media screen and (orientation: portrait){
+            
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="box">hi</div>
+</body>
+</html>
