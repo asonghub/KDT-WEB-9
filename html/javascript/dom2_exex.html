@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+
+        .green{
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="red" class="box red"></div>
+        <div id="orange" class="box orange"></div>
+        <div class="box yellow"></div>
+    
+        <button type="button" onclick="createGreenBox()">생겨라</button>
+        <button type="button" onclick="removeBox()">사라져라</button>
+    </div>
+    <script>
+
+
+        let boxes = document.querySelector('.container');
+        //document.getElementsByClassName으로 하면 안되낭?
+       
+        function createGreenBox(){
+            let newBox = document.createElement('div');
+
+            newBox.className='box green'
+            boxes.appendChild(newBox)
+        }
+
+        function removeBox(){
+            let newBox = document.getElementById('orange')
+            //클래스로 하면 안되나?
+            boxes.removeChild(newBox)
+        }
+
+    </script>
+</body>
+</html>

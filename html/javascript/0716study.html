@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input id="inputID" type="text" placeholder="값을 입력하세요">
+    <input />
+    <input />
+    <input />
+    <div class="redBox">원래는 빨간 박스</div>
+    <button onclick="submitt()">클릭</button>
+
+    <ul class="menu">
+        <li class="one">일번</li>
+        <li class="two">이번</li>
+    </ul>
+
+    
+
+    <script>
+        // $('div').css('backgroundColor','yellow');
+        //$('div').attr('css','backgroundColor:yellow')
+        // let box = document.querySelector('div');
+        // box.style = 'background-color: yellow';
+
+        $('div').attr('style','background-color : yellow; width:200px');
+        //$('input').attr('placeholder','속성변경');
+        let aa = document.querySelector('input')
+        aa.setAttribute('placeholder','js속성변경')
+
+        //$('div').text('노란박스지롱');
+        //$('div').html(`<div style='width:100px'>새박스</div>`)
+        let box = document.querySelector('div');
+        //box.innerText='js텍스트변경';
+        box.innerHTML = `<div id='newBox' style='width:100px'>새박스</div>`;
+
+        $('ul').append('<li>append로 ul의 막내 자식</li>')
+        //let jsUl = document.createElement('li');
+        //jsUl.innerText='js자식만들기'
+        //document.querySelector('ul').appendChild(jsUl)
+        
+        //document.querySelector('ul').innerHTML='<li>js자식만들기</li>'
+
+        $('ul').prepend('<li>prepend로 ul의 첫번째 자식 </li>')
+
+        //$('li').after('<li>after형제만들기</li>')
+
+        //$('.redBox').remove()
+        //document.querySelector('div').remove()
+
+        // $('.redBox').empty()
+        //document.querySelector('div').removeChild(document.getElementById('newBox'))
+
+
+        function submitt(){
+            //document.getElementById('inputID').value='넣었다';
+            $('input').val('넣었다');
+            //console.log(document.getElementById('inputID').value);
+            console.log($('input').val());
+        }
+
+        // //input의 value 가져오기
+        // document.getElementById('input').value(); //js
+        // $('#id').val(); //jquery
+
+        // //input의 value 설정하기
+        // document.getElementById('input').value('설정하기');
+        // $('#id').val('설정하기'); //jquery
+
+    </script>
+    
+</body>
+</html>

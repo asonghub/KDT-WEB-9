@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let time = Number(prompt('지금은 몇시인가요?'));
+        // if( time < 12 ) {
+        // console.log('오전입니다');
+        // } else if( time <18 ) {
+        // console.log('오후입니다');
+        // } else if( time <= 24 ) {
+        // console.log('밤입니다');
+        // } else { 
+        // console.log('다시 입력하세요');
+        // }
+
+        // let time1 =15;
+        // switch(time1)
+
+        // for(let i = 0; i < 10; i++){
+        //         console.log(i+1,"번 반복");
+        // }
+
+        // let num = Number(prompt('숫자를 입력하세유'));
+        // for( i = 0 ; i <= num ; i ++){
+        //     if( i%13==0 && i%2==1){
+        //         console.log(i)
+        //     }
+        // }
+
+        // let j = 0;
+        // while( j <= num ){
+        //     if( j%13==0 && j%2==1){
+        //         console.log(j)
+        //     }
+        //     j++;
+        // }
+            
+        //구구단
+        // for(let i = 2 ; i < 10 ; i++ ){
+        //     console.log(i, "단");
+        //     for(let j = 1 ; j < 10 ; j++){
+        //         console.log(`${i}*${j}=${i*j}`);
+        //     }
+        // }
+
+        // let fruits = ['바나나', '딸기', '포도']
+        // for( let i = 0 ; i < fruits.length ; i ++){
+        //     console.log(fruits[i]);
+        // }
+
+        // let numbers = [ 1, 2, 3, 4, 5 ];
+        // let sum = 0;
+        // for( let i = 0; i < numbers.length ; i ++ ){
+        //     sum =sum + numbers[i]
+        // }
+        // console.log(sum)
+        // let fruits = ['바나나', '사과' , '딸기']
+        // for(let fruit of fruits){
+        //     console.log(fruit)
+        // }
+
+
+        // let fruits = ['바나나', '사과' , '딸기'];
+        // fruits.forEach(function(data, index, arr){
+        //     console.log('data:', data);
+        //     console.log('index:', index);
+        //     console.log('arr:', arr);
+        // })
+        
+        // let arr=[];
+        // for(i=0; i<100; i++){
+        //     arr.push(i+1)
+        // }
+        // console.log(arr)
+
+        // let sum1=0;
+        // for(j=0; j < arr.length ; j++){
+        //     sum1 += arr[j];
+        // }
+        // console.log(sum1)
+
+        // let sum2=0;
+        // for(let num of arr){
+        //     sum2 += num;
+        // }
+        // console.log(sum2)
+
+        // let sum3=0;
+        // arr.forEach((value) =>{
+        //     sum3 += value;
+        // })
+        // console.log(sum3)
+
+
+        let now = new Date()
+        console.log(now) //Thu Jul 13 2023 09:31:35 GMT+0900 (한국 표준시)
+        console.log(now.getFullYear()) //2023, 년도
+        console.log(now.getMonth())// 6, 현재달-1로 나옴
+        console.log(now.getDate())// 13, 일
+        console.log(now.getDay())//4, 요일(월=1,화=2...)
+        console.log(now.getTime()) //1970년 1월 1일 자정을 기준으로 현재시간까지 몇 ms가 지났는지
+        console.log(now.getHours()) //9, 현재 시간
+        console.log(now.getMinutes())//44, 현재 분
+        console.log(now.getSeconds())//52, 현재 초
+
+        let expired = new Date('2024-01-01')
+        console.log(now.getTime - expired.getTime > 0 ? '만료' : '기간 남음')
+
+        
+        console.log(`오늘날짜: ${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`)
+        let tomorrow = new Date(now.getTime()+24*60*60*1000)
+        console.log(tomorrow)
+        console.log(`내일날짜: ${tomorrow.getFullYear()}-${tomorrow.getMonth()}-${tomorrow.getDate()}`)
+    </script>
+
+
+    
+</body>
+</html>

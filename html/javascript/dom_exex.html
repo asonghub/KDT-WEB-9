@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="red" class="box red">기존텍스트</div>
+    <div id="orange" class="box orange"></div>
+    <div class="box yellow"></div>
+
+    <button type="button" onclick="toggleBox()">깜빡 깜빡</button>
+    <input type="text" name="id" />
+
+    <script>
+        // let redBoxbyID = document.getElementById("red")//id는 무조건 하나라서 배열에 담기지 않음
+        // console.log(redBoxbyID)
+
+        // let boxes = document.getElementsByClassName("box")//class는 여러곳에 쓰일 수있어서 무조건 배열에 담음. 하나여도!
+        // console.log(boxes)
+
+        // let boxesByTag = document.getElementsByTagName("div")
+        // console.log(boxesByTag)
+
+        // let input = document.getElementsByName("id") //name으로 선택. 배열에 담김
+        // console.log(input)
+
+        // let css1 = document.querySelector('.box')
+        // console.log(css1)
+
+        // let css2 = document.querySelectorAll('.box')
+        // console.log(css2)
+
+        // document.write('안녕?')
+        // let redBox = document.getElementById('red');
+        // redBox.innerText = '요소 속 글자'
+        // redBox.innerHTML = '<span>inner</span><span>HTML</span>'
+        // console.log(redBox.textContent) 
+        
+        // console.log(redBox.className) //클래스 네임 반환. 바꿀수잇음
+        // // redBox.className =" yellow"
+
+        function toggleBox(){
+            let redBox = document.getElementById('red')
+            if( redBox.classList.contains('red')){
+                redBox.classList.remove('red')
+            }else{
+                redBox.classList.add('red')
+            }
+        }
+
+    </script>
+</body>
+</html>

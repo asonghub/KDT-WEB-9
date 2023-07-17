@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .green{
+            background-color: green;
+        }
+        .container1{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: bisque;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="box red">형제1</div>
+        <div class="box orange">형제2</div>
+        <div class="box green">형제3</div>
+    </div>
+    <div class="container2 "></div>
+    <div class="container3"></div>
+
+    <script>
+        console.log($('.container1').children('.orange'))
+    </script>
+</body>
+</html>

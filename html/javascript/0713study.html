@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="red"></div>
+        <div class="orange"></div>
+    </div>
+    <input type="text" />
+    <button type="button" onclick="btn()">버튼</button>
+
+    <script>
+        $('.container').append(`<div id='red'>추가</div>`)
+
+        $('div.red').css("backgroundColor","red")
+        
+        $('#red').addClass('yellow')
+
+        function btn(){
+            $('#red').append('<div class="yellow"></div>')
+        }
+
+    </script>
+</body>
+</html>
