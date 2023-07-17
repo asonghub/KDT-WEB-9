@@ -40,36 +40,49 @@
 
 </head>
 <body>
-    <div class="box red" onclick="switchColor2()" style="cursor: pointer;"></div>
+    <div class="box red" onclick="switchColor()" style="cursor: pointer;"></div>
     <!-- <button type="button" onclick="switchColor()">바껴라</button> -->
 
     <script>
-        console.log($('.box').hasClass('red'))
-        function switchColor(){
-            if($('div').hasClass('red')){
-              $('.box').switchClass('red','orange',1000)  
-            }else if($('div').hasClass('orange')){
-                $('.box').switchClass('orange','yellow',1000)
-            }else if($('div').hasClass('yellow')){ 
-                $('.box').switchClass('yellow','green',1000)
-            }else if($('div').hasClass('green')){
-                $('.box').switchClass('green','blue',1000)
-            }else if($('div').hasClass('blue')){
-                $('.box').switchClass('blue','navy',1000)
-            }else if($('div').hasClass('navy')){
-              $('.box').switchClass('navy','purple',1000)  
-            }else if($('div').hasClass('purple')){
-                $('.box').switchClass('purple','red',1000)
-            }
+        // console.log($('.box').hasClass('red'))
+        // function switchColor(){
+        //     if($('div').hasClass('red')){
+        //       $('.box').switchClass('red','orange',1000)  
+        //     }else if($('div').hasClass('orange')){
+        //         $('.box').switchClass('orange','yellow',1000)
+        //     }else if($('div').hasClass('yellow')){ 
+        //         $('.box').switchClass('yellow','green',1000)
+        //     }else if($('div').hasClass('green')){
+        //         $('.box').switchClass('green','blue',1000)
+        //     }else if($('div').hasClass('blue')){
+        //         $('.box').switchClass('blue','navy',1000)
+        //     }else if($('div').hasClass('navy')){
+        //       $('.box').switchClass('navy','purple',1000)  
+        //     }else if($('div').hasClass('purple')){
+        //         $('.box').switchClass('purple','red',1000)
+        //     }
             
-        }
+        // }
 
-        const colors=['red','orange','yellow','green','blue','navy','purple']
+        // const colors=['red','orange','yellow','green','blue','navy','purple']
+        // let num = 0;
+        // function switchColor2(){
+        //     $('.box').switchClass(colors[num],colors[num+1])
+        //     num++;
+        //     if(num === colors.length-1) num=0;
+        // }
+
+        const colors=['red','orange','yellow','green','blue','purple','red'];
         let num = 0;
-        function switchColor2(){
-            $('.box').switchClass(colors[num],colors[num+1])
+        function switchColor(){
+            console.log(num,num+1)
+            $('.box').switchClass(colors[num],colors[num+1]);
             num++;
-            if(num === colors.length-1) num=0;
+            
+            if(num === colors.length-1){
+            num=0}
+            console.log(num,num+1)
+            ;
         }
         
     </script>
