@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        값1:
+        <input type="number" id="val1"/>
+    </div>
+    <div>
+        값2:
+        <input type="number" id="val2"/>
+    </div>
+    <div>
+        연산자:
+        <input type="text" id="op"/>
+    </div>
+    <div>
+        결과:
+        <input type="text" id="result"/>
+    </div>
+    <button type="button" onclick="calc()">계산하기</button>
+    <button type="button" onclick="reset()" >초기화</button>
+
+    <script>
+        let val1 = Number(document.getElementById('val1').value);
+        let val2 = Number(document.getElementById('val2').value);
+        console.log(val1, val2)
+        let op = document.getElementById('op').value;
+        let result = document.getElementById('result');
+        console.log(typeof(val1))
+
+        function calc(){
+            // let val1 = Number(document.getElementById('val1').value);
+            // let val2 = Number(document.getElementById('val2').value);
+            // let op = document.getElementById('op').value;
+            let result1 = null;
+            if( op == '+' ){
+                result1 = val1+val2;
+                console.log(typeof(val1))
+            }else if(op == '-'){
+                result1 = val1-val2;
+            }else if(op == '*'){
+                result1=val1*val2;
+            }else if(op == '/'){
+                result1=val1/val2;
+            }
+            result.value= result1;
+            console.log(typeof(val1))
+        }
+
+        function reset(){
+            val1=''
+            val2=''
+            op=''
+            result.value=''
+        }
+
+        function calc2(){
+            let num1= document.getElementById('val1').value;
+            let num2= document.getElementById('val2').valeu;
+            let op= document.getElementById('')
+            let result;
+            switch(op){
+                case '+': 
+                result=num1+num2
+                break;
+                case ''
+
+            }
+        }
+    </script>
+</body>
+</html>
