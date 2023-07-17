@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: skyblue;
+    }
+
+    
+
+    @media screen and (max-width:500px) {
+        body{
+            background-color: white;
+        }
+    }
+    @media screen and (max-width:300px) {
+        body{
+            background-color: orange;
+        }
+    }
+    
+    @media screen and (min-height: 300px) {
+        p{
+            font-family: serif;
+           
+        }
+    }
+    @media screen and (min-height: 500px) {
+        p{
+            background-color: green;
+            font-family: sans-serif;
+        }
+    }
+        
+    
+</style>
+<body>
+    <p>미디어 쿼리 실습</p>
+    
+</body>
+</html>
