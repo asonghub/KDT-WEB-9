@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/837ff3adc1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      :root {
+        --nav-height-lg: 100px;
+        --nav-height-sm: 60px;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* HEADER */
+      header {
+        width: 100%;
+        height: var(--nav-height-lg);
+        z-index: 100;
+        /* position: fixed; */
+      }
+
+      /* 768px 보다 클때의 header */
+      header .inner {
+        background-color: lightblue;
+        height: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* LOGO */
+      header .inner .logo {
+        color: white;
+        font-size: 30px;
+        position: absolute;
+        left: 10vw;
+      }
+
+      /* header .inner .logo .i{
+        position: absolute;
+        left: 10vw;
+      } */
+
+      header .inner .menu {
+        display: flex;
+        position: absolute;
+      }
+
+      header .inner .menu li {
+        margin: 10px;
+        font-weight: 800;
+      }
+
+      /* 미디어 쿼리 작성 768px 이하일 때  */
+      @media screen and (max-width: 768px) {
+        header {
+            height: var(--nav-height-sm);
+            
+        }
+        header .inner{
+            display: block;
+            
+        }
+        header .inner .logo{
+            position: relative;
+            left : 50%;
+            margin-left: -17px;
+            /* margin-left: 45vw; */
+            align-items: center;
+            justify-content: center;
+            
+        }
+        header .inner .menu{
+            position: relative;
+            display:block;
+
+            background-color: rgb(208, 236, 245);
+            text-align: center;
+            padding: 1px;
+            /* width: 100%; */
+        }
+
+        header .inner .menu li {
+        margin: 10px;
+        font-weight: 500;
+      }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">
+          <i class="fa-solid fa-igloo"></i>
+        </div>
+        <ul class="menu">
+          <li>메뉴1</li>
+          <li>메뉴2</li>
+          <li>메뉴3</li>
+          <li>메뉴4</li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>
