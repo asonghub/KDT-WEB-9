@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //spread 연산자
+        const a = [1, 2, 3];
+        const b = [4, 5];
+
+        //기존 방식
+        const concat = a.concat(b)
+        console.log('concat',concat);
+
+        const spread = [...a, ...b];
+        console.log(spread)// [1, 2, 3, 4, 5]
+
+        const aa ='abc'
+        const bb='de'
+        const abab=[...aa,...bb]
+        console.log(abab)
+
+        const person = {
+            name: 'martin',
+            age: 29,
+        };
+        console.log({...person}); //{name: 'martin', age: 29}
+//객체에도 할수는 있지만 굳이?
+
+        const c = 'hello'
+        console.log([...c]) //['h', 'e', 'l', 'l', 'o']
+
+
+        //rest 파라미터 
+        //...와 비슷한데 쓰이는 위치가 얘는 함수
+        function get(a, b) { //인자를 c, d 등등 더 늘리고 싶을 때 
+            console.log(a, b);
+        }
+        get(10, 20);
+
+        function gett(a, ...rest){
+            console.log(a, rest);
+        }
+        gett(10, 20, 30, 40, 50)
+        //a에는 할당되고 나머지는 배열. 
+        //rest는 반드시 제일 마지막에 써야함.
+
+        //class
+        class Cat{
+            //생성자
+            constructor( name, age){
+                //속성
+                this.name = name; //할당만 해둬도 됨. 
+                this.age = age;
+            }
+            //메소드
+            mew(){
+                console.log('야옹')
+            }
+            eat(){
+                console.log('먹이를 먹습니다')
+            }
+        }
+        const cat1 = new Cat('나비',1);
+        const cat2 = new Cat('냥이', 2);
+        cat1.mew();
+        cat1.eat();
+        cat2.mew();
+        cat2.eat();
+
+    </script>
+</body>
+</html>
