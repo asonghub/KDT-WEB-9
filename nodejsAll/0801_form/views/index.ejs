@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h4>GET 요청</h4>
+    <form action="/getForm" method="GET"> 
+        <!-- getForm으로 보냄  -->
+        <input type="text" placeholder="id" name="id" required> 
+        <!-- html은 지울수가 있어서 실무에서 사용하지 않음. -->
+        <input type="password" placeholder="pw" name="pw" required>
+        <button type="submit">제출</button>
+    </form>
+    <hr />
+    <h4>POST 요청</h4>
+    <form action="/postForm" method="POST">
+        <input type="text" placeholder="id" name="id" value="postid" readonly>
+        <input type="password" placeholder="pw" name="pw" value="1234" pattern="^([a-z0-9]{8,12})">
+        <!-- a.replace(/ /g,"") 하면 빈 문자열을 모두 선택하는게 g , 뒤에가 대체할 문자열-->
+        <input type="email"><br/>
+        <input type="radio"><br/> 
+        <!-- 중복선택불가 -->
+        <input type="checkbox"><br/>
+        <input type="tel">
+        <input type="number">
+        <input type="date">
+        <input type="time">
+        <input type="color">
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>
