@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>profile</title>
+</head>
+
+<body>
+    <h1>내 회원 정보</h1>
+    <form name="form-profile">
+        <fieldset>
+            <legend>프로필</legend>
+            
+            <input type="text" id="name"  value="<%= data.name %>" ><br /> 
+            <input type="text" id="userid"   value="<%= data.userid %>"><br />
+            <input type="text" id="password"  value="<%= data.pw %>"><br >
+            <button type="button" onclick="registerEdit(`<%= data.id %>`)">수정</button>
+            <button type="button" onclick="deleteUser(`<%= data.id %>`)">탈퇴하기</button>
+        </fieldset>
+    </form>
+
+    <script>
+        
+
+        function registerEdit(id){
+            const form = document.forms['form-profile'];
+            axios({
+                method: 'PATCH',
+                url: '/user/edit',
+                data:{
+                    id: Number(id),
+                    name: form.name.value,
+                    userid: form.userid.value,
+                    pw: form.password.value,
+                },
+            }).then((res)=>{
+                console.log('res',res);
+                if(res.data.result){
+                    alert('성공')
+                    //window.location.reload();
+                }
+            });
+        }
+
+        function deleteUser(id){
+            if(confirm('탈퇴하시겠습니까?')){
+            }
+
+            axios({
+                method: 'DELETE',
+                url: '/user/delete',
+                data:{
+                    id: Number(id)
+                },
+            }).then((res)=>{
+                console.log(res.data)
+                if(res.data.result){
+                    alert('탈퇴처리가 완료되었습니다.')
+                    window.location.href='/';
+                }
+            })
+        }
+    </script>
+    
+</body>
+
+</html>
