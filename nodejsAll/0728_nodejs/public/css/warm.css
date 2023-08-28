@@ -1,0 +1,63 @@
+.container{
+    position: relative;
+    width: 700px;
+    height: 500px;
+    background-color: azure;
+}
+.container  div{
+    border-radius: 50%;
+    position: absolute;
+}
+.circle{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.circle1{
+    top:50px;
+    left:50px;
+    background-color: skyblue;
+}
+.circle2{
+    top:95px;
+    left:95px;
+    background-color: rgb(24, 106, 138);
+}
+.circle3{
+    top:120px;
+    left:120px;
+    background-color: rgb(10, 40, 52);
+}
+.circle4{
+    top:130px;
+    left:160px;
+    background-color: rgb(16, 112, 102);
+}
+.circle5{
+    top:150px;
+    left:200px;
+    background-color: rgb(51, 160, 73);
+    z-index: 2;
+}
+.eye1{
+    position: absolute;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left:15px;
+}
+.eye2{
+    position: absolute;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    /* left:15px; */
+}
+img{
+    position: relative;
+    top:170px;
+    left:50px;
+    z-index:1;
+}
