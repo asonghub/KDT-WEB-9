@@ -9,19 +9,19 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 //body-parser
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
 
 //정적파일 설정
 app.use('/uploads', express.static(__dirname + '/uploads'))
-//multer(보통 바디파서 밑에다가 둠)
+//multer(보통 바디파서 밑에다가 둠) : 경로나 파일 이름을 설정하기 위해 사용. 
 const upload = multer({
     //dest: 업로드할 파일을 저장할 경로를 지정
     dest: 'uploads/'
 })
 const uploadDetail = multer({
     //storage: 저장할 공간에 대한 정보
-    //diskStorage: 파일을 디스크에 저장하기 위한 모든 제어 기능을 제공
+    //diskStorage: 파일을 디스크에 저장하기 위한 모든 제어 기능을 제공(경로,이름)
     storage: multer.diskStorage({
         destination(req, file, done ) { //done은 콜백함수
             done(null, 'uploads/') //에러처리?
@@ -32,7 +32,7 @@ const uploadDetail = multer({
             done(null, path.basename(file.originalname, ext) + Date.now() + ext);
         }
     }),
-    limits: {fileSize : 5 * 1023 * 1024}
+    limits: {fileSize : 5 * 1023 * 1024}//5mb
 });
 
 
