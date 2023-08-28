@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="form-login">
+        <input type="text" id="id" placeholder="id"><br/>
+        <input type="password" id="pw" placeholder="pw"><br />
+        <button type="button" onclick="login()">로그인</button>
+    </form>
+
+    <script>
+        async function login() {
+            const data = {
+                userid: document.querySelector('#id').value,
+                pw: document.querySelector('#pw').value
+            }
+            const result = await axios({
+                method: "POST",
+                url: "login",
+                data
+            });
+            console.log('result', result)
+        }
+    </script>
+</body>
+</html>
