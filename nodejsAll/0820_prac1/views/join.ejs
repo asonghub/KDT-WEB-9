@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form-join">
+        <input type="text" id="name" placeholder="이름"> <br>
+        <input type="text" id="userid" placeholder="ID"><br>
+        <input type="password" id="pw" placeholder="PW"><br>
+        <button type="button" onclick="join()">회원가입</button>
+    </form>
+
+    <script>
+        async function join() {
+            const form = document.forms['form-join'];
+            const data = {
+                name: form.name.value,
+                userid: form.userid.value,
+                pw: form.pw.value,
+            }
+            try{
+                const res = await axios({
+                    method: 'POST',
+                    url: '/join',
+                    data,
+                })
+                if(res)
+                document.location.href = '/login'
+        
+            } catch(error){
+                console.log(error)
+            }
+
+        }
+    </script>
+</body>
+
+</html>
