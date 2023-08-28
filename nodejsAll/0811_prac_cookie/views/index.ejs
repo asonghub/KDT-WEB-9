@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+      <!-- axios cdn -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="modal" id="myModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">[공지] 안내사항 </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>안내사항입니다</p>
+            <div style="text-align: right; font-size: small;">
+              <input type="checkbox" name="check" id="check" onclick="cooking()">
+              하루동안 이 창을 보이지 않음
+            </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+          <!-- <button type="button" class="btn btn-primary">닫기</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cooked" style="display: none;"><%= checkCookie%></div>
+  <script>
+   
+
+    async function cooking(){
+      $("#myModal").modal("hide");
+
+      const res = await axios({
+        method: 'POST',
+        url: '/cooked',
+        data: {}
+      });
+    }
+
+    $(function () {
+      if($('.cooked').text() === 'checked'){
+        $("#myModal").modal("hide");
+      }else{
+        $("#myModal").modal("show");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
