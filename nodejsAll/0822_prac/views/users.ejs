@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td,
+        th {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>회원 목록</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>이름</th>
+            <th>성별</th>
+            <th>전공</th>
+        </tr>
+        <% for(let i=0; i < lists.length ; i++){ %>
+            <tr>
+                <td>
+                    <%= lists[i].userid %>
+                </td>
+                <td>
+                    <%= lists[i].name%>
+                </td>
+                <td>
+                    <%= lists[i].gender %>
+                </td>
+                <td>
+                    <%= lists[i].major %>
+                </td>
+            </tr>
+            <% } %>
+
+    </table>
+    <br>
+    <fieldset style="width: 50vw;">
+        <legend>회원 추가</legend>
+        <form name="form-register">
+            <input type="text" name="name" placeholder="이름"><br />
+            <input type="text" name="gender" placeholder="성별"><br />
+            <input type="text" name="major" placeholder="전공"><br />
+            <button type="button" onclick="register()">회원 추가</button>
+        </form>
+    </fieldset>
+
+    <script>
+        async function register() {
+            const form = document.forms['form-register'];
+            const data = {
+                name: form.name.value,
+                gender: form.gender.value,
+                major: form.major.value
+            }
+            const res = await axios({
+                method: "POST",
+                url: "/users",
+                data
+            })
+            console.log(res)
+            document.location.href = '/users'
+            //document.location.reload();
+        }
+    </script>
+</body>
+
+</html>
