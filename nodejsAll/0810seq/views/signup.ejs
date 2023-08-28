@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>회원가입하기</title>
+</head>
+
+<body>
+    <h1>Mood Diary와 함께하세요!</h1>
+    <form action="/user/signup" method="GET" name="registerUser">
+        <fieldset>
+            <label for="name">이름 <input type="test" name="name" required></label>
+            <br>
+            <label for="userid">아이디 <input type="text" name="userid" required></label>
+            <br>
+            <label for="pw">비밀번호 <input type="password" name="pw" required></label>
+        </fieldset>
+        <br>
+        <button type="button" onclick="regi()">회원가입하기</button>
+    </form>
+
+    <a href="/">홈으로 돌아가기</a>
+
+    <script>
+        function regi() {
+            console.log('회원가입시도')
+            const form = document.forms['registerUser']
+
+            axios({
+                method: 'POST',
+                url: '/user/signup',
+                data: {
+                    name: form.name.value,
+                    userid: form.userid.value,
+                    pw: form.pw.value,
+                },
+            }).then((res) => {
+                console.log('res', res);
+                if (res.data.result) {
+                    alert('회원가입이 완료되었습니다.');
+                    window.location.href='/user/signin';
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

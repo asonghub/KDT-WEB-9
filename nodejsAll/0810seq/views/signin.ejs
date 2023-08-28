@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <!-- axios cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+
+<body>
+    <h1>로그인</h1>
+    <form name="form-login" action="/user/profile" method="POST">
+        <label for="id">아이디: </label>
+        <input type="text" id="userid" name="userid">
+        <br />
+        <label for="pw">비밀번호</label>
+        <input type="password" id="pw" name="pw">
+        <br />
+        <!-- <input type="hidden" id="hidden-id" name="hidden-id"> -->
+        <button type="submit" onclick="login()">로그인</button>
+
+    </form>
+    <!-- <form action="/user/profile" method="POST">
+        <input type="hidden" id="hidden-id" name="hidden-id">
+        <a href="/user/profile" type="submit" 
+    </form> -->
+    <a href="/">홈으로 돌아가기 </a>
+    <div class="result"></div>
+    <script>
+        const resultBox = document.querySelector('.result');
+
+        function login( ) {
+            // document.getElementById('hidden-id').value= data.userid;
+            // console.log(document.getElementById('hidden-id').value);
+            
+            // console.log('axios post')
+            const form = document.forms['form-login']; //사실 여기서 없어도 됨
+            const data = {
+                userid: form.userid.value, //document.querySelector('#id').vlaue해도됨
+                pw: form.pw.value,
+            };
+            // console.log(data)
+            axios({
+                method: 'POST',
+                url: '/user/signin',
+                data
+            }).then((res)=>{
+                // console.log(res)
+                
+                // console.log(res.data);
+                const result = res.data.result;
+                if(result == false){
+                    // resultBox.textContent = '아이디 또는 패스워드가 틀렸습니다.'
+                    // resultBox.style.color='red'
+                    window.location.href='/user/signin'
+                    // resultBox.innerHTML = `${data.userid}님 환영합니다. <a href='/user/profile'>내프로필 보기</a>`
+                    // resultBox.style.color='blue'
+                    
+                    // // window.location.href='/user/profile'
+                }
+                // else {
+                //     resultBox.textContent = '아이디 또는 패스워드가 틀렸습니다.'
+                //     resultBox.style.color='red'
+                // }
+            });
+
+            
+        }
+    </script>
+
+</body>
+
+</html>
