@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>싱글 연습</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile"><br />
+        <input type="text" name="title"><br />
+        <button type="submit">업로드</button>
+    </form>
+
+    <h1>멀티 연습(ver1): 한번에 여러개 업로드</h1>
+    <form action="/upload/array" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfiles" multiple><br />
+        <input type="text" name="title"><br />
+        <button type="submit">업로드</button>
+    </form>
+
+    <h1>멀티 연습(ver2): 여러개의 요청</h1>
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile1" multiple><br />
+        <input type="text" name="title1"><br />
+        <input type="file" name="userfile2"><br />
+        <input type="text" name="title2"><br />
+        <button type="submit">업로드</button>
+    </form>
+
+    <h1>동적 파일 업로드</h1>
+    <form onsubmit="fileupload(event)" name="form-upload">
+        <input type="file" id="dynamic"><br />
+        <input type="text" id="title"><br />
+        <button type="submit">업로드</button>
+    </form>
+    <br />
+    <div class="result"></div>
+
+    <script>
+        // form태그 쓰는것이 html5규격이라 form 안쓰고 하는게 옳은 방법은 아님. 리액트에서 다시 배움 
+        const resultBox = document.querySelector('.result');
+        async function fileupload(event) {
+            event.preventDefault(); //기본 제출 동작을 막음
+            console.log('file upload')
+            const title = document.querySelector('#title').value;
+
+            //파일에 접근하기 위해서 file.files 사용하는것이고
+            //file.files는 배열을 반환하며 우리가 원하는 것은 
+            //첫번째 파일이기 때문에 file.files[0]사용
+            const file = document.querySelector('#dynamic');
+            console.log(file.files[0]);
+
+            //파일은 다시 폼에 담아서 서버로 보내야함
+            //FromData: 자바스크립트 내장객체이고 폼 데이터를 생성시켜 줌
+            const formData = new FormData()
+            //append(key, value)
+            formData.append('title', title);
+            formData.append('dynamic', file.files[0]); //서버에서 받는 이름이 동일해야함 (single('dynamic'))
+            //!중요: 파일은 제일 마지막에 보내야함
+            try {
+                const res = await axios({ //첫번째 부모에 async 넣어주기 
+                    method: "POST",
+                    url: '/dynamic',
+                    data: formData,
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                })
+
+                console.log('res', res);
+                resultBox.innerHTML = `<img src = ${res.data.path}>`
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
