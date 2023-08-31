@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        #body {
+            width: 100%;
+            height: 70vh;
+            position: relative;
+            background: #a7e2bdba;
+        }
+
+        #chat {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #chat input {
+            width: 80%;
+        }
+
+        .my-chat {
+            display: flex;
+            justify-content: end;
+            padding: 2px;
+        }
+
+        .my-chat p {
+            margin: 0;
+            padding: 5px;
+            background: yellow;
+            border-radius: 10px 0 10px 10px;
+            margin-right: 10px;
+        }
+
+        .other-chat {
+            display: flex;
+            justify-content: start;
+            padding: 2px;
+        }
+
+        .other-chat p {
+            margin: 0;
+            padding: 5px;
+            background: white;
+            border-radius: 0 10px 10px 10px;
+            margin-left: 10px;
+        }
+
+        .notice {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: grey;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <form id="room">
+            <input type="text" id="roomName" placeholder="채팅방 만들기" />
+            <input type="text" id="userName" placeholder="사용자 이름 입력" />
+            <button>만들기</button>
+        </form>
+        <div id="lists"></div>
+    </div>
+    <div id="body" hidden>
+        <div id="msg"></div>
+        <form id="chat">
+            <select id="userList"></select>
+            <input type="text" id="message" placeholder="메세지 입력" />
+            <button>입력</button>
+            <button type="button" onclick="exit()">나가기</button>
+        </form>
+    </div>
+
+    <script>
+        const socket = io();
+        const roomForm = document.querySelector("#room");
+        const chatForm = document.querySelector("#chat");
+        const msg = document.querySelector("#msg");
+
+        let myName;
+        let userList;
+
+        //룸리스트
+        socket.on("roomList", (roomLists) => {
+            console.log(roomLists);
+            const lists = document.querySelector("#lists");
+            lists.textContent = "";
+            roomLists.forEach((roomList) => {
+                const li = document.createElement("li");
+                li.textContent = `${roomList} 와 닉네임 입력 후 입장`;
+                lists.appendChild(li);
+            });
+        });
+
+        //사용자 리스트
+        socket.on("userList", (userLists, userName) => {
+            console.log(userLists, userName);
+            userList = userLists;
+            const lists = document.querySelector("#userList");
+            lists.textContent = "";
+            let options = `<option value="all">전체</option>`;
+            for (let key in userLists) {
+                options += `<option value="${key}">${userLists[key]}</option>`;
+            }
+            lists.innerHTML = options;
+            const div = document.querySelector('#msg');
+            const notice = document.createElement('div');
+            const p = document.createElement('p');
+            notice.classList.add('notice')
+            p.textContent = `${userName}님이 입장하였습니다.`;
+            div.appendChild(notice)
+            notice.appendChild(p)
+        });
+        //메세지 띄우기
+        socket.on("newMessage", (message, nick, sendTo) => {
+            console.log(message, sendTo, userList[sendTo]);
+            const div = document.createElement("div");
+            const p = document.createElement('p');
+            if (userList[sendTo] == undefined) {
+                if (nick == myName) {
+                    div.classList.add('my-chat')
+                } else {
+                    div.classList.add('other-chat')
+                }
+                //채팅텍스트
+                p.textContent = message
+                div.appendChild(p);
+                msg.appendChild(div);
+            } else {
+                if (nick == myName) {
+                    div.classList.add('my-chat')
+                    //채팅텍스트
+                    div.innerHTML = `<p style="background-color:pink;">(귓속말) ${message}</p>`
+                    msg.appendChild(div);
+                } else if (userList[sendTo] == myName) {
+                    div.classList.add('other-chat')
+                    //채팅텍스트
+                    div.innerHTML = `<p style="background-color:pink;">(귓속말) ${message}</p>`
+                    msg.appendChild(div);
+                }
+
+            }
+
+        });
+
+        ///폼 이벤트
+        roomForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const roomName = roomForm.querySelector("#roomName");
+            const userName = roomForm.querySelector("#userName");
+            if (roomName.value === "" || userName.value === "") {
+                alert("방이름과 닉네임 적어주세요");
+                return;
+            }
+
+            socket.emit("create", roomName.value, userName.value, () => {
+                const main = document.querySelector("#main");
+                const body = document.querySelector("#body");
+                main.hidden = true;
+                body.hidden = false;
+                myName = userName.value
+            });
+        });
+        chatForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const user = document.querySelector("#userList");
+            const message = document.querySelector("#message");
+            console.log(user.value);
+            const msg = {
+                nick: myName,
+                user: user.value,
+                message: message.value,
+            };
+            socket.emit("sendMessage", msg);
+            message.value = '';
+        });
+
+        async function exit() {
+            await socket.disconnect()
+
+            const main = document.querySelector("#main");
+            const body = document.querySelector("#body");
+            main.hidden = false;
+            body.hidden = true;
+            
+        }
+    </script>
+</body>
+
+</html>
