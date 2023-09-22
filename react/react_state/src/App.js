@@ -9,6 +9,10 @@ import ShowFunc from "./ShowFunc";
 import BoardFunc from "./BoardFunc";
 import Todo from "./Todo";
 import LifeCycleClass from "./LifeCycleClass";
+import LifeCycleFunc from "./LifeCycleFunc";
+import PostList from "./PostList";
+import User from "./User";
+import InputState from "./Input";
 
 function App() {
   return (
@@ -23,7 +27,11 @@ function App() {
       {/* <ShowFunc /> */}
       {/* <BoardFunc /> */}
       {/* <Todo /> */}
-      <LifeCycleClass />
+      {/* <LifeCycleClass /> */}
+      {/* <LifeCycleFunc></LifeCycleFunc> */}
+      {/* <PostList/> */}
+      <User />
+      <InputState type="text" required={false} />
     </>
   );
 }
