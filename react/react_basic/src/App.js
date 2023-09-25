@@ -8,7 +8,15 @@ import Book from "./Book";
 import Event from "./Event";
 import EventClass from "./EventClass";
 import ShowMsg from "./Message";
-
+import RefSampleClass1 from "./09Ref/RefSampleClass1";
+import RefSampleClass2 from "./09Ref/RefSampleClass2";
+import Board from "./09Ref/Board";
+import RefSampleFunc1 from "./09Ref/RefSampleFunc1";
+import RefSampleFunc2 from "./09Ref/RefSampleFunc2";
+import BoardFunc from "./09Ref/BoardFunc";
+import RefSampleFunc3 from "./09Ref/RefSampleFunc3";
+import UseMemo from "./10Hook/UseMemo";
+import UseCallback from "./10Hook/useCallback";
 function App() {
   return (
     <>
@@ -36,7 +44,19 @@ function App() {
 
       {/* <Event></Event> */}
       {/* <EventClass></EventClass> */}
-      <ShowMsg message={"이벤트핸들링"}></ShowMsg>
+      {/* <ShowMsg message={"이벤트핸들링"}></ShowMsg>*/}
+
+      {/* <RefSampleClass1 />
+      <RefSampleClass2 /> */}
+      {/* <Board />*/}
+
+      {/* <RefSampleFunc1 />
+      <RefSampleFunc2 />
+      <RefSampleFunc3 /> */}
+      {/* <BoardFunc /> */}
+
+      {/* <UseMemo /> */}
+      <UseCallback />
     </>
   );
 }
