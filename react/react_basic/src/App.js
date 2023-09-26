@@ -1,22 +1,32 @@
-import ClassComponent from "./ClassComponent";
-import FunctionComponent from "./FunctionComponent";
-import Larva from "./Larva";
-import Test from "./test";
-import Test2 from "./test2";
-import Food from "./Food";
-import Book from "./Book";
-import Event from "./Event";
-import EventClass from "./EventClass";
-import ShowMsg from "./Message";
-import RefSampleClass1 from "./09Ref/RefSampleClass1";
-import RefSampleClass2 from "./09Ref/RefSampleClass2";
-import Board from "./09Ref/Board";
-import RefSampleFunc1 from "./09Ref/RefSampleFunc1";
+// import ClassComponent from "./03Props/ClassComponent";
+// import FunctionComponent from "./03Props/FunctionComponent";
+// import Larva from "./01JSX/Larva";
+// import Test from "./01JSX/test";
+// import Test2 from "./test2";
+// import Food from "./03Props/Food";
+// import Book from "./03Props/Book";
+// import Event from "./05Event/Event";
+// import EventClass from "./05Event/EventClass";
+// import ShowMsg from "./03Props/Message";
+// import RefSampleClass1 from "./09Ref/RefSampleClass1";
+// import RefSampleClass2 from "./09Ref/RefSampleClass2";
+// import Board from "./09Ref/Board";
+// import RefSampleFunc1 from "./09Ref/RefSampleFunc1";
 import RefSampleFunc2 from "./09Ref/RefSampleFunc2";
 import BoardFunc from "./09Ref/BoardFunc";
 import RefSampleFunc3 from "./09Ref/RefSampleFunc3";
 import UseMemo from "./10Hook/UseMemo";
 import UseCallback from "./10Hook/useCallback";
+import Counter from "./10Hook/useReducer";
+import Style from "./11Style/Style";
+import SignupForm from "./10Hook/Prac";
+import SassComponent from "./11Style/SassComponent";
+import Larva from "./11Style/Larva";
+import Ani from "./11Style/Ani";
+import StyledComponent from "./11Style/StyledComponent";
+import StyledPrac from "./11Style/StyledPrac";
+import List from "./11Style/List";
+
 function App() {
   return (
     <>
@@ -56,7 +66,18 @@ function App() {
       {/* <BoardFunc /> */}
 
       {/* <UseMemo /> */}
-      <UseCallback />
+      {/* <UseCallback /> */}
+      {/* <Counter />
+      <SignupForm /> */}
+
+      {/* <Style /> */}
+      {/* <SassComponent />
+      <Larva /> */}
+      {/* <Ani /> */}
+
+      {/* <StyledComponent /> */}
+      {/* <StyledPrac /> */}
+      <List />
     </>
   );
 }

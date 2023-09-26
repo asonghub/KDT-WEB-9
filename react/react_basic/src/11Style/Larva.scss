@@ -1,0 +1,48 @@
+@import "./utils.scss";
+
+.container {
+  position: relative;
+  width: 700px;
+  height: 500px;
+  background-color: azure;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+
+  &.circle1 {
+    @include circle(50px, 50px, skyblue);
+    .eye1 {
+      border-radius: 50%;
+      position: absolute;
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      top: 20px;
+      left: 15px;
+      .eye2 {
+        border-radius: 50%;
+        position: absolute;
+        background-color: black;
+        width: 20px;
+        height: 20px;
+        top: 10px;
+      }
+    }
+  }
+  &.circle2 {
+    @include circle(95px, 95px, rgb(24, 106, 138));
+  }
+  &.circle3 {
+    @include circle(120px, 120px, rgb(10, 40, 52));
+  }
+  &.circle4 {
+    @include circle(130px, 160px, rgb(16, 112, 102));
+  }
+  &.circle5 {
+    @include circle(150px, 200px, rgb(51, 160, 73));
+  }
+}

@@ -1,0 +1,31 @@
+@mixin move($color, $move, $top, $movearound) {
+  width: 50px;
+  height: 50px;
+  background-color: $color;
+  border-radius: 50%;
+  animation: $movearound 3s linear infinite;
+  position: absolute;
+  margin-top: $top;
+  @keyframes #{$movearound} {
+    0% {
+      left: 0px;
+      top: 0px;
+    }
+    25% {
+      left: #{$move};
+      top: 0px;
+    }
+    50% {
+      left: #{$move};
+      top: #{$move};
+    }
+    75% {
+      left: 0px;
+      top: #{$move};
+    }
+    100% {
+      left: 0px;
+      top: 0px;
+    }
+  }
+}

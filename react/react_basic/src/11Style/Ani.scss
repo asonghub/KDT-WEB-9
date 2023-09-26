@@ -1,0 +1,13 @@
+@import "./_prac.scss";
+.box {
+  position: relative;
+  .pink {
+    @include move(pink, 50px, 0, move);
+  }
+  .yellow {
+    @include move(yellow, 100px, 50px, move1);
+  }
+  .green {
+    @include move(green, 150px, 100px, move2);
+  }
+}
