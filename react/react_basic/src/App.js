@@ -12,26 +12,29 @@
 // import RefSampleClass2 from "./09Ref/RefSampleClass2";
 // import Board from "./09Ref/Board";
 // import RefSampleFunc1 from "./09Ref/RefSampleFunc1";
-import RefSampleFunc2 from "./09Ref/RefSampleFunc2";
-import BoardFunc from "./09Ref/BoardFunc";
-import RefSampleFunc3 from "./09Ref/RefSampleFunc3";
-import UseMemo from "./10Hook/UseMemo";
-import UseCallback from "./10Hook/useCallback";
-import Counter from "./10Hook/useReducer";
-import Style from "./11Style/Style";
-import SignupForm from "./10Hook/Prac";
-import SassComponent from "./11Style/SassComponent";
-import Larva from "./11Style/Larva";
-import Ani from "./11Style/Ani";
-import StyledComponent from "./11Style/StyledComponent";
-import StyledPrac from "./11Style/StyledPrac";
-import List from "./11Style/List";
+// import RefSampleFunc2 from "./09Ref/RefSampleFunc2";
+// import BoardFunc from "./09Ref/BoardFunc";
+// import RefSampleFunc3 from "./09Ref/RefSampleFunc3";
+// import UseMemo from "./10Hook/UseMemo";
+// import UseCallback from "./10Hook/useCallback";
+// import Counter from "./10Hook/useReducer";
+// import Style from "./11Style/Style";
+// import SignupForm from "./10Hook/Prac";
+// import SassComponent from "./11Style/SassComponent";
+// import Larva from "./11Style/LarvadComponent";
+// import StyledPrac from "./11Style/StyledPrac";
+// import List from "./11Style/List";
+// import Router from "./12Router/Router";
+import Header from "./12Router/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       {/* <ClassComponent />
-      <FunctionComponent></FunctionComponent>
+      <FunctionComponent></Func";
+import Ani from "./11Style/Ani";
+import StyledComponent from "./11Style/StyletionComponent>
       <Larva></Larva>
       <Test></Test>
       <Test2></Test2> */}
@@ -76,8 +79,15 @@ function App() {
       {/* <Ani /> */}
 
       {/* <StyledComponent /> */}
-      {/* <StyledPrac /> */}
-      <List />
+      {/* <StyledPrac />
+      <List /> */}
+
+      {/* ver1 */}
+      {/* <Router /> */}
+
+      {/* ver2 */}
+      <Header />
+      <Outlet />
     </>
   );
 }

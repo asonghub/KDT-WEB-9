@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const _Btn = styled.button`
-  background-color: blue;
-  color: white;
+  background-color: ${(props) => (props.click ? "red" : "blue")};
+  color: ${(props) => (props.click ? "black" : "white")};
+  cursor: pointer;
 
   &.clicked {
     background-color: red;
@@ -19,7 +20,10 @@ export default function StyledPrac() {
 
   return (
     <div>
-      <_Btn className={click ? "" : "clicked"} onClick={changColor}>
+      {/* <_Btn className={click ? "" : "clicked"} onClick={changColor}>
+        클릭
+      </_Btn> */}
+      <_Btn onClick={changColor} click={click}>
         클릭
       </_Btn>
     </div>

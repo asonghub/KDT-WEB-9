@@ -9,6 +9,11 @@ const _Btn = styled.button`
   margin: 3px;
 `;
 
+const _Input = styled.input`
+  padding: 5px;
+  margin: 3px;
+`;
+
 const _Todo = styled.div`
   height: 20px;
   border-bottom: 1px solid grey;
@@ -16,9 +21,12 @@ const _Todo = styled.div`
 `;
 
 const _Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 200px;
   height: 200px;
-  overflow: scroll;
+  overflow-y: scroll;
   background-color: beige;
 `;
 
@@ -27,17 +35,19 @@ export default function List() {
   const [todoList, setTodoList] = useState([]);
 
   const addList = () => {
-    setTodoList([...todoList, todo]);
-    console.log(todoList);
+    if (todo !== "") {
+      setTodoList([...todoList, todo]);
+      setTodo("");
+    }
   };
   return (
     <div>
       <form>
-        <input
+        <_Input
           placeholder="할일"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
-        ></input>
+        ></_Input>
         <_Btn type="button" onClick={addList}>
           Add
         </_Btn>
