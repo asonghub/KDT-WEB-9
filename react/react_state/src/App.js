@@ -13,6 +13,8 @@ import LifeCycleFunc from "./LifeCycleFunc";
 import PostList from "./PostList";
 import User from "./User";
 import InputState from "./Input";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -29,9 +31,12 @@ function App() {
       {/* <Todo /> */}
       {/* <LifeCycleClass /> */}
       {/* <LifeCycleFunc></LifeCycleFunc> */}
-      {/* <PostList/> */}
+      {/* <PostList />
       <User />
-      <InputState type="text" required={false} />
+      <InputState type="text" required={false} /> */}
+
+      <Header />
+      <Outlet />
     </>
   );
 }
