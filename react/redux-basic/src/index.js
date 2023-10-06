@@ -1,3 +1,24 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Provider } from "react-redux";
+// import store from "./store/todo";
+// import cartStore from "./store/cart";
+import store from "./store"; //index는 생략가능
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    {/* <Provider store={store}>
+      <App />
+    </Provider> */}
+
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
+/*
 //리덕스를 이용한 숫자 증가, 감소 코드
 import { createStore } from "redux";
 
@@ -59,6 +80,7 @@ store.subscribe(() => {
   });
 });
 
+*/
 /*내코드
 const addTodo = document.querySelector("#addTodo");
 const todo = document.querySelector("#todo");
